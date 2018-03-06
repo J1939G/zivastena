@@ -1,0 +1,400 @@
+﻿/*.section:hover {
+    box-shadow: 0px 0px 7px -1px;
+    transition: 0.5s;
+}
+
+.title {
+    margin: 0.2em 0em !important;
+    font-size: 7em !important;
+    line-height: 1em;
+}
+
+#topTitle {
+    text-align: left;
+    width: 100% !important;
+    margin: 0em;
+    margin-bottom: 0.2em !important;
+    margin-top: 0.1em !important;
+}
+
+#container {
+    overflow-x: hidden !important;
+    margin-bottom: 0px !important;
+}
+
+#sScroll {
+    width: 100% !important;
+    margin: 0 !important;
+}
+
+.section {
+    width: 18.5% !important;
+    margin: 0.5% !important;
+    transition: 0.5s;
+    margin-top: 0px !important;
+    margin-bottom: 5px !important;
+}
+
+#leftLink {
+    margin-right: 12% !important;
+}
+
+#rightLink {
+    margin-left: 12% !important;
+}
+
+#bottom {
+    margin-top: -7em !important;
+}
+
+    #bottom a {
+        font-size: 3em !important;
+        width: 18% !important;
+        font-weight: 100 !important;
+    }
+
+#embassy {
+    width: 19% !important;
+    display: inline-block !important;
+    height: 1em !important;
+    font-size: 1em !important;
+    padding: 0px !important;
+    margin: 0px auto !important;
+    text-align: center !important;
+}
+
+.embassyLink {
+    display: inline-block !important;
+    margin: 0px !important;
+    position: relative !important;
+    padding: 0px !important;
+    vertical-align: text-top !important;
+    margin: 0.5em 0% 0% 0.5vw !important;
+}
+
+#topTitle p {
+    margin: 0.2em 0em !important;
+    margin-left: 20% !important;
+    width: 60% !important;
+    display: inline-block;
+    text-align: center;
+}
+
+.flag {
+    height: 100% !important;
+    vertical-align: text-top !important;
+    width: auto !important;
+    position: relative !important;
+    vertical-align: middle !important;
+    display: block !important;
+    margin: 0em !important;
+}
+
+#title {
+    font-size: 4em !important;
+    font-family: 'Segoe UI';
+    width: 100% !important;
+    text-align: center;
+    position: fixed;
+    line-height: 1.5em !important;
+    height: 1.5em !important;
+    background-color: white;
+    top: 0px !important;
+    z-index: 5;
+}
+
+    #title img {
+        display: none;
+    }
+
+#content {
+    width: 80% !important;
+    display: inline-block;
+    z-index: 0;
+    text-align: right;
+}
+
+#book {
+    width: 85% !important;
+    max-width: 40em;
+    position: relative;
+    text-align: justify;
+    text-justify: kashida;
+    font-size: 1.5em;
+    font-weight: 300;
+    margin: 0 5% 0 10% !important;
+    margin-top: 4em !important;
+    display: inline-block;
+}
+
+.info {
+    display: block !important;
+    margin: 3em 0em 3em 0em !important;
+}
+
+#portrait {
+    height: 15em !important;
+}
+
+#sideBar {
+    vertical-align: top !important;
+    position: fixed;
+    width: 20% !important;
+    display: inline-block;
+    margin: 6em 0 !important;
+    left: auto !important;
+}
+
+    #sideBar ul li a {
+        text-decoration: none;
+        color: black;
+        font-size: 2em !important;
+        font-weight: 100 !important;
+        line-height: 1em !important;
+        padding-left: 5% !important;
+    }
+
+    #sideBar ul {
+        padding-left: 2em !important;
+    }
+
+        #sideBar ul li {
+            list-style-image: url(../IMG/Start/Icons/pb32.png);
+            background-image: none;
+        }
+
+#Cbottom {
+    width: 100%;
+    background-color: white;
+    position: fixed;
+    z-index: 5;
+    height: 6em !important;
+    vertical-align: middle;
+    bottom: 0px;
+    margin-bottom: 0px;
+    text-align: center;
+}
+
+    #Cbottom a {
+        display: inline-block;
+        font-size: 2em;
+        line-height: 0.5em;
+        font-weight: 100;
+        text-decoration: none;
+        color: black;
+        margin: 0px 5%;
+    }
+
+.icon {
+    margin-right: 1em !important;
+    vertical-align: text-top;
+}
+*/
+
+/*--------------------START------------------------------------------------------------*/
+
+.title {
+    margin: 0.2em 0em !important;
+    font-size: 7em !important;
+    line-height: 1em;
+}
+
+#topTitle {
+    text-align: left;
+    width: 100% !important;
+    margin: 0em;
+    margin-bottom: 0.2em !important;
+    margin-top: 0.1em !important;
+}
+
+    #topTitle p {
+        margin: 0.2em 0em !important;
+        margin-left: 20% !important;
+        width: 60% !important;
+        display: inline-block;
+        text-align: center;
+    }
+
+#embassy {
+    width: 19% !important;
+    display: inline-block !important;
+    height: 1em !important;
+    font-size: 1em !important;
+    padding: 0px !important;
+    margin: 0px auto !important;
+    text-align: center !important;
+}
+
+.embassyLink {
+    display: inline-block !important;
+    margin: 0px !important;
+    position: relative !important;
+    padding: 0px !important;
+    vertical-align: text-top !important;
+    margin: 0.5em 0% 0% 0.5vw !important;
+}
+
+.flag {
+    height: 100% !important;
+    vertical-align: text-top !important;
+    width: auto !important;
+    position: relative !important;
+    vertical-align: middle !important;
+    display: block !important;
+    margin: 0em !important;
+}
+
+#container {
+    overflow-x: hidden !important;
+    margin-bottom: 0px !important;
+}
+
+.verticalScroll {
+    position: relative;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    height: auto;
+    display: block;
+    white-space: nowrap;
+}
+
+#sScroll {
+    width: 100% !important;
+    margin: 0 !important;
+}
+
+.section {
+    width: 18.5% !important;
+    margin: 0.5% !important;
+    transition: 0.5s;
+    margin-top: 0px !important;
+    margin-bottom: 5px !important;
+}
+
+.section div {
+    width: 100%;
+    text-align: center;
+}
+
+    .section div p {
+        font-size: 3em;
+        margin: 0px;
+        margin-bottom: 0.2em;
+        font-weight: 100;
+    }
+
+
+#leftLink {
+    margin-right: 12% !important;
+}
+
+#rightLink {
+    margin-left: 12% !important;
+}
+
+#bottom {
+    margin-top: -7em !important;
+}
+    #bottom a {
+        font-size: 2.5em !important;
+        width: 17% !important;
+        font-weight: 100 !important;
+    }
+
+        #bottom a p {
+            padding: 0;
+            margin: 0.5em 0em;
+        }
+
+/*--------------------INFO------------------------------------------------------------*/
+
+#content {
+    width: 80% !important;
+    display: inline-block;
+    z-index: 0;
+    text-align: right;
+}
+
+#title {
+    font-size: 4em !important;
+    /*font-family: 'Segoe UI', sans-serif;*/
+    width: 100% !important;
+    text-align: center;
+    position: fixed;
+    line-height: 1.5em !important;
+    height: 1.5em !important;
+    background-color: white;
+    top: 0px !important;
+    z-index: 5;
+}
+
+    #title img {
+        display: none;
+    }
+
+#book {
+    width: 85% !important;
+    max-width: 40em;
+    position: relative;
+    text-align: justify;
+    text-justify: kashida;
+    font-size: 1.5em;
+    font-weight: 300;
+    margin: 0 5% 0 10% !important;
+    margin-top: 4em !important;
+    display: inline-block;
+}
+
+#portrait {
+    height: 15em !important;
+}
+
+#sideBar {
+    vertical-align: top !important;
+    position: fixed;
+    width: 20% !important;
+    display: inline-block;
+    margin: 6em 0 !important;
+    left: auto !important;
+}
+
+    #sideBar ul {
+        padding-left: 2em !important;
+    }
+
+        #sideBar ul li {
+            list-style-image: url(../IMG/Start/Icons/pb32.png);
+            background-image: none;
+        }
+
+            #sideBar ul li a {
+                text-decoration: none;
+                color: black;
+                font-size: 2em !important;
+                font-weight: 100 !important;
+                line-height: 1em !important;
+                padding-left: 5% !important;
+            }
+
+#Cbottom {
+    width: 100%;
+    background-color: white;
+    position: fixed;
+    z-index: 5;
+    height: 6em !important;
+    vertical-align: middle;
+    bottom: 0px;
+    margin-bottom: 0px;
+    text-align: center;
+}
+
+    #Cbottom a {
+        display: inline-block;
+        font-size: 2em;
+        line-height: 0.5em;
+        font-weight: 100;
+        text-decoration: none;
+        color: black;
+        margin: 0px 5%;
+    }

@@ -1,0 +1,21 @@
+﻿#container{
+    margin-bottom: 1em !important;
+}
+.verticalScroll{
+    width: 100% !important;
+}
+
+#lScroll {
+    text-align: center !important;
+}
+#lScroll a{
+    height: 25em !important;
+    margin: 0.3% -0.3% !important;
+}
+#bottom a{
+    width: 16% !important;
+}
+#bottom a p {
+    margin: 0em !important;
+    font-weight: 200 !important;
+}

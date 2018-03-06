@@ -1,0 +1,89 @@
+﻿#content {
+    width: 80% !important;
+    display: inline-block;
+    z-index: 0;
+    text-align: right;
+}
+
+#title {
+    font-size: 4em !important;
+    font-family: 'Segoe UI';
+    width: 100% !important;
+    text-align: center;
+    position: fixed;
+    line-height: 1.5em !important;
+    height: 1.5em !important;
+    background-color: white;
+    top: 0px !important;
+    z-index: 5;
+}
+
+    #title img {
+        display: none;
+    }
+
+#book {
+    width: 85% !important;
+    max-width: 40em;
+    position: relative;
+    text-align: justify;
+    text-justify: kashida;
+    font-size: 1.5em;
+    font-weight: 300;
+    margin: 0 5% 0 10% !important;
+    margin-top: 4em !important;
+    display: inline-block;
+}
+
+#portrait {
+    height: 15em !important;
+}
+
+#sideBar {
+    vertical-align: top !important;
+    position: fixed;
+    width: 20% !important;
+    display: inline-block;
+    margin: 6em 0 !important;
+    left: auto !important;
+}
+
+    #sideBar ul {
+        padding-left: 2em !important;
+    }
+
+#sideBar ul li {
+    list-style-image: url(../IMG/Start/Icons/pb32.png);
+    background-image: none;
+}
+
+#sideBar ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 2em !important;
+    font-weight: 100 !important;
+    line-height: 1em !important;
+    padding-left: 5% !important;
+}
+
+#Cbottom {
+    width: 100%;
+    background-color: white;
+    position: fixed;
+    z-index: 5;
+    height: 6em !important;
+    vertical-align: middle;
+    bottom: 0px;
+    margin-bottom: 0px;
+    text-align: center;
+}
+
+    #Cbottom a {
+        display: inline-block;
+        font-size: 2em;
+        line-height: 0.5em;
+        font-weight: 100;
+        text-decoration: none;
+        color: black;
+        margin: 0px 5%;
+    }

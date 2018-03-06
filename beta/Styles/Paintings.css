@@ -1,0 +1,101 @@
+﻿
+@@font-face {
+    font-family: "mfont";
+    src: url(../Fonts/roboto.ttf);
+}
+
+body {
+    font-family: "Segoe UI", mfont, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    border: none;
+}
+
+* {
+    font-family: "Segoe UI", mfont, sans-serif;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    padding-bottom: 3em;
+    -webkit-overflow-scrolling: touch;
+}
+
+.title {
+    margin: 0.2em 0em;
+    text-align: center;
+    font-size: 8em;
+    font-weight: 100;
+}
+
+#space {
+    width: 97%;
+    text-align: center;
+    padding: 0 1.5%;
+}
+
+    #space > div {
+        border-radius: 0.5em;
+        overflow: hidden;
+        font-size: 1em;
+        text-align: left;
+    }
+
+    #space div p {
+        text-align: left;
+        margin-left: 2em;
+    }
+
+body div div {
+    width: 100%;
+    display: block;
+    margin-bottom: 1em;
+}
+
+    body div div div {
+        width: 100%;
+        margin: 0px;
+    }
+
+p {
+    font-family: 'Segoe UI', mfont,sans-serif;
+    width: 100%;
+    text-align: center;
+    font-size: 2em;
+    padding: 0px;
+    margin: 0px;
+}
+
+img {
+    position: relative;
+    width: 100%;
+    margin: 0px;
+}
+
+#bottom {
+    display: block;
+    width: 100%;
+    position: relative;
+    text-align: center;
+    margin-top: 3em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+    #bottom a {
+        text-decoration: none;
+        display: inline-block;
+        margin: 0px;
+        font-size: 3.5em;
+        width: 33%;
+        border: 0px;
+        padding: 0px;
+        color: rgba(92, 92, 92, 1);
+    }
+
+        #bottom a p {
+            padding: 0px;
+            margin: 0.5em 0em;
+            font-size: 1em
+        }

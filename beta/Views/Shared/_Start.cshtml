@@ -1,0 +1,89 @@
+﻿@model beta.Models.Start
+@{
+    Layout = null;
+    string[] Langs = { "CZ", "EN", "ES" };
+    string[] Indexes = { "Doma", "Home", "Inicio" };
+    string[] nazev = { "živá stěna", "malířství" };
+    string[] title = { "ziva stena", "murals" };
+    string[] titulo = { "paredviva", "murales" };
+    string[] stranka = { "Děti", "Interiéry", "Obrazy", "Veřejnost", "Milost" };
+    string[] page = { "Children", "Interiors", "Paintings", "Public", "Grace" };
+    string[] paginas = { "Niños", "Interiores", "Cuadros", "Público", "Gracia" };
+    string[] linkcz = { "Deti", "Interiery", "Obrazy", "Verejnost", "Milost" };
+    string[] linken = { "Children", "Interiors", "Paintings", "Public", "Grace" };
+    string[] linkes = { "Ninos", "Interiores", "Cuadros", "Publico", "Gracia" };
+    string[] infocz = { "O mně", "Kontakt", "Ceny", "Chci Malbu", "Milost" };
+    string[] infoen = { "Libuska", "Contact", "Pricing", "I Want One", "Grace" };
+    string[] infoes = { "Libuska", "Contacto", "Precios", "Quiero Uno", "Gracia" };
+    string[] linfocz = { "Libuse", "Kontakt", "Ceny", "ChciMalbu", "Milosti" };
+    string[] linfoen = { "Libuska", "Contact", "Pricing", "Paint", "Gracea" };
+    string[] linfoes = { "Libuska", "Contacto", "Precios", "QuieroUno", "Graciaa" };
+    string[][] Titles = { nazev, title, titulo };
+    string[][] Pages = { stranka, page, paginas };
+    string[][] Links = { linkcz, linken, linkes };
+    string[][] Info = { infocz, infoen, infoes };
+    string[][] infoLinks = { linfocz, linfoen, linfoes };
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="/IMG/Start/Icons/abc.ico?" type="image/x-icon" />
+    <script type="text/javascript">
+        function menu() {       //Animation for sidebar
+            var SB = document.getElementById("sideBar");
+            var LI = document.getElementsByTagName("li");
+            if (SB.style.left == "0") {
+                SB.style.left = "90%";
+                LI.style.marginLeft = "60%";
+            }
+            else {
+                SB.style.left = "90%";
+                LI.style.marginLeft = "0";
+            }
+        }
+    </script>
+    <link type="text/css" rel="stylesheet" href="~/Styles/General.css" />
+    @{
+        if (Request.Browser.IsMobileDevice == false)
+        {
+            <link type="text/css" rel="stylesheet" href="~/Styles/Desktop.css" />
+        };
+    }
+    <title>@Titles[Model.Lang][0]</title>
+</head>
+<body style="padding:0px;margin:0px">
+    <div id="topTitle" class="title">
+    <p>@Titles[Model.Lang][0]</p><div id="embassy">
+        @for (int i = 0; i < 3; i++)
+        {
+            if (i == Model.Lang) { continue; }
+            string link = "/IMG/Start/Langs/" + Langs[i] + ".png";
+            <a class="embassyLink" href="../@Indexes[i]/@Indexes[i]"><img class="flag" alt="@Langs[i]" src="@link" /></a>
+        }</div>
+    </div>
+    <div id="container">
+        <div class="verticalScroll" id="sScroll">
+            @for (int numberOfSections = 0; numberOfSections < 5; numberOfSections++)
+            {
+                string imageHRef = "/IMG/Start/IN" + (numberOfSections + 1) + ".jpg";
+                <a class="section" href="/@Indexes[Model.Lang]/@Links[Model.Lang][numberOfSections]">
+                    <div>
+                        <img alt="@Langs[Model.Lang]" src="@imageHRef" />
+                        <p>@Pages[Model.Lang][numberOfSections]</p>
+                    </div>
+                </a>}
+        </div>
+    </div>
+    <h1 class="title" id="bTitle" style="margin-bottom: 0px;">@Titles[Model.Lang][1]</h1>
+    <div id="bottom">
+        @for (int numberOfLinks = 0; numberOfLinks < 4; numberOfLinks++)
+        {
+            string id = "";
+            if (numberOfLinks == 1) { id = "id=leftLink"; }
+            if (numberOfLinks == 2) { id = "id=rightLink"; }
+            <a class="link" @id href="/@Indexes[Model.Lang]/@infoLinks[Model.Lang][numberOfLinks]"><p>@Info[Model.Lang][numberOfLinks]</p></a>
+        }
+    </div>
+</body>
+</html>

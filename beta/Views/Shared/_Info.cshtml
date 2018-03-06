@@ -1,0 +1,96 @@
+﻿@model beta.Models.Info
+@{
+    Layout = null;
+    string[] stranka = { "Děti", "Interiéry", "Obrazy", "Veřejnost", "Milost" };
+    string[] page = { "Children", "Interiors", "Paintings", "Public", "Grace" };
+    string[] paginas = {"Niños", "Interiores", "Cuadros", "Público", "Gracia" };
+    string[] linkcz = { "Deti", "Interiery", "Obrazy", "Verejnost", "Milost" };
+    string[] linken = { "Children", "Interiors", "Paintings", "Public", "Grace" };
+    string[] linkes = { "Ninos", "Interiores", "Cuadros", "Publico", "Gracia" };
+    string[] infocz = { "O mně", "Kontakt", "Ceny", "Chci Malbu", "Milost" };
+    string[] infoen = { "Libuska", "Contact", "Pricing", "I Want One", "Grace" };
+    string[] infoes = { "Libuska", "Contacto", "Precios", "Quiero Uno", "Gracia" };
+    string[] linfocz = { "Libuse", "Kontakt", "Ceny", "ChciMalbu", "Milosti" };
+    string[] linfoen = { "Libuska", "Contact", "Pricing", "Paint", "Gracea" };
+    string[] linfoes = { "Libuska", "Contacto", "Precios", "QuieroUno", "Graciaa" };
+    string[] Langs = { "CZ", "EN", "ES" };
+    string[] Indexes = { "Doma", "Home", "Inicio" };
+    string[][] Pages = { stranka, page, paginas };
+    string[][] Links = { linkcz, linken, linkes };
+    string[][] Info = { infocz, infoen, infoes };
+    string[][] infoLinks = { linfocz, linfoen, linfoes };
+    int NO = Model.Number;
+    int L = Model.Lang;
+    string style = "";
+    string msa = "margin-bottom:5em!important";
+    string msb = "margin-bottom:6em!important";
+    if (Model.Number == 0) { style = "style=" + msa; };
+    if(Model.Number == 1) { style = "style=" + msb; };
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@Info[L][NO]</title>
+    <link rel="shortcut icon" href="/IMG/Start/Icons/abc.ico?" type="image/x-icon" />
+
+    <link type="text/css" rel="stylesheet" href="~/Styles/General.css" />
+    @{
+        if (Request.Browser.IsMobileDevice == false)
+        {
+            <link type="text/css" rel="stylesheet" href="~/Styles/Desktop.css" />
+        };
+        if (Request.Browser.IsMobileDevice == true)
+        {
+            <script type="text/javascript">
+                function menu() {
+                    var SB = document.getElementById("sideBar");
+                    if (document.getElementById("sideBar").style.left == "90%") {
+                        SB.style.left = "0%";
+                        SB.style.paddingLeft = "2em";
+                    } else {
+                        SB.style.left = "90%";
+                        SB.style.paddingLeft = "0";
+                    }
+                }
+            </script>
+        }
+    }
+</head>
+<body onload="document.getElementById('hide').style.opacity = '0'; document.getElementById('hide').style.transition = '1s 0.25s';menu()">
+    <div id="hide" style="position:absolute;width:100%;height:100%;background-color:white;margin:0px;"></div>
+    <div id="content">
+        <div  id="title">
+            <p>@Info[L][NO]</p><!--
+            --><img src="~/IMG/Start/Icons/menu256.png" onclick="menu()"/>
+        </div>
+        <div id="book" @style>
+            <p  class="text">@if (Model.Number == 55)
+            {<img id="portrait" src="~/IMG/Start/Extras/Circles.gif" alt="Portrait" />}@Model.Text</p>
+            @if ( Model.Number == 1) {
+            <p class="text info"><img src="~/IMG/Start/Extras/phone.png" class="icon" />+420 727 961 485</p>
+            <a href="https://www.facebook.com/zivastena.eu/" class="text info"><img src="~/IMG/Start/Extras/fb-flat.png" class="icon" />ŽIVÁ STĚNA</a>
+            <a href="https://www.instagram.com/ziva_stena/" class="text info"><img src="~/IMG/Start/Extras/igram.png" class="icon" />ziva_stena</a>
+            <a href="mailto:info@zivastena.eu" alt="Link to mail" class="text info"><img src="~/IMG/Start/Extras/mail.png" class="icon" />info@zivastena.eu</a>
+            }
+        </div>
+    </div><!--
+    --><div id="sideBar">
+        <ul>
+            @for(int numberOfLinks = 0; numberOfLinks < 5; numberOfLinks++ )
+            {
+                if(numberOfLinks == NO){ continue; }
+                <li class="it"><a class="sit" href="/@Indexes[L]/@infoLinks[L][numberOfLinks]">@Info[L][numberOfLinks]</a></li>
+            }
+        </ul>
+    </div>
+    <div id="Cbottom">
+        <a href="/@Indexes[L]/@Indexes[L]"><p>@Indexes[L]</p></a>
+        @for (int numberOfLinks = 0; numberOfLinks < 5; numberOfLinks++)
+        {
+            if(numberOfLinks == NO) { continue; }
+            <a href="/@Indexes[L]/@Links[L][numberOfLinks]"><p>@Pages[L][numberOfLinks]</p></a>
+        }
+    </div>
+</body>
+</html>

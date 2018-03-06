@@ -1,0 +1,87 @@
+﻿@model  List<beta.Models.Painting>
+@{
+    Layout = null;
+    string[] Indexes = { "Doma", "Home", "Inicio" };
+    string[] stranka = { "Děti", "Interiéry", "Obrazy", "Veřejnost", "Milost" };
+    string[] page = { "Children", "Interiors", "Paintings", "Public", "Grace" };
+    string[] paginas = { "Niños", "Interiores", "Cuadros", "Público", "Gracia" };
+    string[] linkcz = { "Deti", "Interiery", "Obrazy", "Verejnost", "Milost" };
+    string[] linken = { "Children", "Interiors", "Paintings", "Public", "Grace" };
+    string[] linkes = { "Ninos", "Interiores", "Cuadros", "Publico", "Gracia" };
+    string[] infocz = { "O mně", "Kontakt", "Ceny", "Chci Malbu", "Milost" };
+    string[] infoen = { "Libuska", "Contact", "Pricing", "I Want One", "Grace" };
+    string[] infoes = { "Libuska", "Contacto", "Precios", "Quiero Uno", "Gracia" };
+    string[] linfocz = { "Libuse", "Kontakt", "Ceny", "ChciMalbu", "Milosti" };
+    string[] linfoen = { "Libuska", "Contact", "Pricing", "Paint", "Gracea" };
+    string[] linfoes = { "Libuska", "Contacto", "Precios", "QuieroUno", "Graciaa" };
+    string[][] Pages = { stranka, page, paginas };
+    string[][] Links = { linkcz, linken, linkes };
+    string[][] Info = { infocz, infoen, infoes };
+    string[][] infoLinks = { linfocz, linfoen, linfoes };
+    int Lang = 0;
+    if (Model[1].Title == "Kolo") { Lang = 0; };
+    if (Model[1].Title == "Bicycle") { Lang = 1; };
+    if (Model[1].Title == "Bicicleta") { Lang = 2; };
+    Random rom = new Random();
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="/IMG/Start/Icons/abc.ico?" type="image/x-icon" />
+    <title>@Pages[Lang][2]</title>
+    <script type="text/javascript">
+    </script>
+    <link type="text/css" rel="stylesheet" href="~/Styles/Paintings.css" />
+    @{
+        if (Request.Browser.IsMobileDevice == false)
+        {
+            <link type="text/css" rel="stylesheet" href="~/Styles/DPaintings.css" />
+        };
+    }
+</head>
+<body>
+    <h1 class="title">@Pages[Lang][2]</h1>
+    <div id="space">
+        @foreach (var item in Model)
+        {
+            int rN = rom.Next(125, 200);
+            string Avail = Convert.ToString((Math.Round((item.Availability * 1.3) / 100) * 100));
+            if (item.Availability == 171717)
+            {
+                if (Lang == 0) { Avail = "Soukromá Sbírka"; }
+                else if (Lang == 1) { Avail = "Private Collection"; }
+                else { Avail = "Colección Privada"; }
+            }
+            else
+            {
+                Avail = Convert.ToString((Math.Round((item.Availability * 1.3) / 100) * 100)) + " Kč";
+            }
+            string r = "";
+            if (item.Size == "undefined")
+            {
+                r = "style=color:transparent;";
+            }
+            string a = item.Abrev + ".JPG";
+            <div id="@item.Abrev" style="background-color:rgb(@rN,@rN,@rN);">
+                <img src="/IMG/Obrazy/@a" alt="IMG" />
+                <div class="data">
+                    <p class="text">@item.Title</p>
+                    <p class="text">@item.Technique</p>
+                    <p class="text">@Avail</p>
+                    <p @r class="text">@item.Size</p>
+                </div>
+            </div>
+        }
+    </div>
+    <div id="bottom">
+        <a class="link" href="/@Indexes[Lang]/@Indexes[Lang]"><p>@Indexes[Lang]</p></a>
+        @for (int linkNumber = 0; linkNumber < 5; linkNumber++)
+        {
+            if (linkNumber == 2) { continue; }
+            <a class="link" href="/@Indexes[Lang]/@Links[Lang][linkNumber]"><p>@Pages[Lang][linkNumber]</p></a>
+        }
+    </div>
+</body>
+</html>

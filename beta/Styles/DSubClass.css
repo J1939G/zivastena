@@ -1,0 +1,40 @@
+﻿body{
+    padding-bottom: 0.1em !important;
+}
+#container {
+    overflow: hidden !important;
+    margin-bottom: 0 !important;
+    margin-top: 2em !important;
+}
+#lScroll{
+    width: 100% !important;
+    padding: 0.5% !important;
+    text-align: center !important;
+}
+img{
+    height: 24em !important;
+    padding: 0px !important;
+}
+#lScroll a {
+    height: auto !important;
+    margin: 0.2% 0.1% !important;
+    overflow: hidden !important;
+    border-radius: 0.5em !important;
+}
+.verticalScroll{
+    white-space: normal !important;
+}
+#bottom {
+    margin-top: 0px !important;
+}
+
+#bottom a {
+    font-size: 2.7em !important;
+    width: 15% !important;
+    font-weight: 100 !important;
+    line-height: 1em !important;
+    margin: 0.7em 0px !important;
+}
+#bottom a p {
+    margin: 0px;
+}
