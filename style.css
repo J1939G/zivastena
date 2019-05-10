@@ -1,0 +1,15 @@
+@charset "UTF-8";
+/*
+Theme Name: Zivastena
+Theme URI: http://www.zivastena.eu
+Author: Jose Smutny
+Author URI: https://www.smutny.pro
+Description: Theme for paintings portfolio, made with love
+Version: 0.1
+Lincece: MIT
+*/
+
+body {
+    margin: 0px;
+    padding: 0px;
+}

@@ -1,0 +1,82 @@
+@font-face
+    font-family: "OpenSansSB"
+    src: url("../../assets/fonts/OpenSans-Bold.ttf")
+
+$lightest: #e8e8e8
+$light: #c5c5c5
+$dark: #cbcbcb
+$darkest: #c0c0c0
+
+p, figcaption, h1
+    font-family: OpenSansSB
+h1
+    width: 100%
+    display: block
+    font-size: 3rem
+    height: 1.5em
+    font-weight: 400
+    text-transform: capitalize
+    line-height: 1.5em
+    text-align: center
+    margin: 0.3em 0
+    margin-bottom: 0px
+    text-shadow: 0px 0px 2.5vw #ccc
+div#content
+    column-count: 2
+    column-gap: 2.5vw
+    overflow: visible
+    width: 95%
+    display: block
+    position: relative
+    margin: 0 auto
+    div.protection
+        overflow: visible
+    figure
+        display: inline-block
+        border-radius: 0.5rem
+        overflow: hidden
+        -webkit-column-break-inside: avoid
+        margin: 0
+        margin-top: 2.5vw
+        background-color: #fff
+        box-shadow: 0px 0px 2.5vw 0px #bbb
+        width: 100%
+        a
+            text-decoration-color: black
+            text-decoration: none
+            display: block
+            &:focus 
+                outline: none
+            img 
+                width: 100%
+                vertical-align: text-bottom
+                height: auto
+            figcaption
+                color: black
+                text-decoration: underline
+                padding-left: 2.5vw
+                font-size: 1.2rem
+                line-height: 1.2em
+                margin-top: 2.5vw
+            p
+                color: #333
+                margin: 0px
+                font-size: 1rem
+                padding-left: 2.5vw
+                margin-bottom: 2.5vw
+
+@media screen and (min-aspect-ratio: 1/1)
+    div#content
+        column-count: 3
+@media screen and (min-aspect-ratio: 29/20)
+    div#content
+        column-count: 4
+        max-width: 1600px
+        figure
+            transition: 0.4s all ease-in-out
+            img 
+                transition: 0.4s all ease-in-out
+            &:hover
+                box-shadow: 0px 0px 2.5vw 0px #777
+                img
+                    transform: scale(1.1) translateY(-5%)
