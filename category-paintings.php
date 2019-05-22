@@ -1,9 +1,13 @@
 <?php
 /**
+ * 
+ * Template Name: Obrazy
+ * 
  * @subpackage Zivastena
  */
 
     $assets = get_stylesheet_directory_uri();
+
     require 'modules.php';
     get_header(); 
 
@@ -29,17 +33,23 @@
             'numberposts' => 100,
         ));
         foreach($randomPosts as $post){
-            $tiempo = get_post_meta($post->ID, 'Tiempo', true);?>
-            <div class="protection">
-                <figure class="post">
-                        <a href="<?php the_permalink(); ?>">
-                            <?php the_post_thumbnail('large'); ?>
-                            <figcaption><?php the_title(); ?></figcaption>
-                            <p><?php echo date_humanize( $tiempo, get_bloginfo("language") ); ?></p>
-                        </a>
-                </figure>
-            </div>
-    <?php
-        }
-        get_footer();
+            $technique = get_post_meta($post->ID, 'Technique', true);
+            $price = get_post_meta($post->ID, 'Price', true);
+            $size = get_post_meta($post->ID, 'Size', true);
+    ?>
+    <div class="protection">
+        <figure class="post">
+                <a href="<?php the_permalink(); ?>">
+                    <?php the_post_thumbnail('large'); ?>
+                    <figcaption><?php the_title(); ?></figcaption>
+                    <p><?php echo technique( $technique, get_bloginfo("language") ); ?><br>
+                    <?php echo humanize_price($price, get_bloginfo("language") ); ?>
+                    <?php echo humanize_size($size); ?></p>
+                </a>
+            </figure>
+        </div>
+        <?php } ?>
+    </div>
+    <?php 
+        get_footer(); 
     ?>
