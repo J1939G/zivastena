@@ -25,7 +25,7 @@ $assets = get_stylesheet_directory_uri();
     $categories = get_categories();
     foreach( $categories as $category ) {
         $category_link = sprintf( 
-            '<a href="%1$s" alt="%2$s">%3$s<img href=/></a>',
+            '<div><a href="%1$s" alt="%2$s"><img href=/><p>%3$s</p></a></div>',
             esc_url( get_site_url().'/'.$category->slug ),
             esc_attr( sprintf( __( 'View all posts in %s', 'textdomain' ), $category->name ) ),
             esc_html( $category->name )
@@ -33,15 +33,8 @@ $assets = get_stylesheet_directory_uri();
         echo sprintf( esc_html__( '%s' ), $category_link );
     } 
     ?>
+    <h2>nastěnné <br id="mobileBreak">malby</h2>
 </div>
-<div id="footer">
-    <h2>nastenne malby</h2>
-    <ul id="menuContainer">
-        <li>blah blahh</li>
-        <li>blah bla bl</li>
-        <li>blah balh</li>
-        <li>bjlakbab</li>
-    </ul>
-<?php
-get_footer();
-?>
+<?php wp_nav_menu(array('theme_location' => 'pages','container_id'=>'footer')); ?>
+</body>
+</html>
