@@ -1,0 +1,17 @@
+{
+    "host": "35.177.4.215",
+    "username": "zivaste1",
+    "password": "0HqC)OJ44ah1w]",
+    "remotePath": "public_html/wp-content/themes/pittsburg/",
+    "protocol": "ftps",
+    "port": 21,
+    "fileNameEncoding": "utf8",
+    "autoUpload": true,
+    "autoDelete": false,
+    "autoDownload": false,
+    "ignore": [
+        ".git",
+        "/.vscode",
+        ".sass"
+    ]
+}

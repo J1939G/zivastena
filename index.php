@@ -16,13 +16,13 @@ $assets = get_stylesheet_directory_uri();
 	<link rel="stylesheet" href="<?php echo $assets.'/assets/css/home' ?>.css">
 	<?php wp_head(); ?>
 </head>
-<body>
+<body onscroll="scroller()">
 <div id="header">
         <h1 id='title'><?php echo get_bloginfo('name') ?></h1>
 </div>
 <div id="categories">
     <?php
-    $categories = get_categories();
+    $categories = get_categories( array('orderby' => 'description', 'order' => 'ASC'));
     foreach( $categories as $category ) {
         $category_link = sprintf( 
             '<div><a href="%1$s" alt="%2$s"><img href=/><p>%3$s</p></a></div>',
@@ -33,7 +33,7 @@ $assets = get_stylesheet_directory_uri();
         echo sprintf( esc_html__( '%s' ), $category_link );
     } 
     ?>
-    <h2>nastěnné <br id="mobileBreak">malby</h2>
+    <h2 id="subTitle">nastěnné <br id="mobileBreak">malby</h2>
 </div>
 <?php wp_nav_menu(array('theme_location' => 'pages','container_id'=>'footer')); ?>
 </body>

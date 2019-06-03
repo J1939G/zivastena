@@ -13,6 +13,8 @@ div#header {
   display: block;
   position: relative;
   text-align: center;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
 
 div#header h1 {
@@ -27,6 +29,8 @@ div#header h1 {
 div#categories {
   width: 95%;
   margin: 0 auto;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
   display: -ms-grid;
   display: grid;
       grid-template-areas: "grace interior" "grace interior" "children interior" "children subtitle" "children paintings" "public paintings" "public paintings";
@@ -131,6 +135,8 @@ div#categories div a img {
 
 div#footer {
   width: 100%;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
   display: block;
 }
 
@@ -182,5 +188,68 @@ div#footer ul li a::before {
   text-decoration: none;
   position: relative;
   display: inline-block;
+}
+
+@media screen and (min-aspect-ratio: 4 / 5) {
+  div#categories {
+        grid-template-areas: "grace children public" "interior children paintings" "interior subtitle paintings";
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+    -ms-grid-rows: 30vh 25vh 20vh;
+        grid-template-rows: 30vh 25vh 20vh;
+  }
+  div#categories div {
+    background-size: cover;
+  }
+  div#footer ul {
+    margin: 2.5vw 0;
+  }
+  div#footer ul li a::before {
+    margin: 0 1.5rem;
+  }
+}
+
+@media screen and (min-aspect-ratio: 29 / 20) {
+  div#header {
+    position: fixed;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 50vw;
+  }
+  div#header h1 {
+    font-size: 4rem;
+    height: 1em;
+    line-height: 1em;
+    text-align: left;
+    padding-left: 3rem;
+  }
+  div#footer {
+    width: 25vw;
+    position: fixed;
+    display: block;
+    top: 7.25rem;
+    z-index: 10;
+  }
+  div#footer ul li {
+    margin-bottom: 1.5em;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
+  div#footer ul li a::before {
+    content: "";
+  }
+  div#categories {
+    width: 70%;
+    margin-left: auto;
+    margin-right: 2.5%;
+    margin-top: 2.5vw;
+    margin-bottom: 5vw;
+        grid-template-areas: "blanka children blankb" "blankc children public" "paintings children public" "paintings subtitle public" "paintings interior public" "grace interior blank" "grace interior blankf" "blankr interior blankf";
+    -ms-grid-rows: 4vw 4vw 20vw 7vw 5vw 15vw 5vw 1vw;
+        grid-template-rows: 4vw 4vw 20vw 7vw 5vw 15vw 5vw 1vw;
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 /*# sourceMappingURL=home.css.map */

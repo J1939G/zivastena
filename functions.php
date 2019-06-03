@@ -8,7 +8,7 @@ add_theme_support( 'post-thumbnails' );
 add_theme_support( 'html5', array( 'gallery', 'caption' ) );
 
 register_nav_menus(array(
-    'general' => __( 'General Menu'),
+    'categories' => __( 'Categories Menu'),
     'pages'=> __('Information Menu')
 ));
 
