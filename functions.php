@@ -9,7 +9,8 @@ add_theme_support( 'html5', array( 'gallery', 'caption' ) );
 
 register_nav_menus(array(
     'categories' => __( 'Categories Menu'),
-    'pages'=> __('Information Menu')
+    'pages'=> __('Information Menu'),
+    'pages-home'=> __('Pages Menu')
 ));
 
 add_filter('show_admin_bar', '__return_false');
