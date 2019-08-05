@@ -39,7 +39,7 @@
     ?>
     <div class="protection">
         <figure class="post">
-                <a href="<?php the_permalink(); ?>">
+                <a>
                     <?php the_post_thumbnail('large'); ?>
                     <figcaption><?php the_title(); ?></figcaption>
                     <p><?php echo technique( $technique, get_bloginfo("language") ); ?><br>
