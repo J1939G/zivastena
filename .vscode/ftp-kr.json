@@ -1,8 +1,8 @@
 {
-    "host": "35.177.4.215",
+    "host": "ftp.zivastena.eu",
     "username": "zivaste1",
     "password": "0HqC)OJ44ah1w]",
-    "remotePath": "public_html/wp-content/themes/pittsburg/",
+    "remotePath": "/www/wp-content/themes/zivastena/",
     "protocol": "ftps",
     "port": 21,
     "fileNameEncoding": "utf8",
