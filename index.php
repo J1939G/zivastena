@@ -33,7 +33,7 @@ $assets = get_stylesheet_directory_uri();
         echo sprintf( esc_html__( '%s' ), $category_link );
     } 
     ?>
-    <h2 id="subTitle">nastěnné <br id="mobileBreak">malby</h2>
+    <h2 id="subTitle"><?php echo get_bloginfo('description')?></h2>
 </div>
 <?php wp_nav_menu(array('theme_location' => 'pages','container_id'=>'footer')); ?>
 </body>
