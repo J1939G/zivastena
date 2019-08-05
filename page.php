@@ -10,17 +10,9 @@ $assets = get_stylesheet_directory_uri();
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
     <title><?php the_title(); ?></title>
-    <script defer>
-
-    function HOMER(){
-        var home = document.createElement('LI');
-        home.innerHTML = '<a href="/">Home</a>';
-        document.getElementById('footer').children[0].appendChild( home );
-    }
-    </script>
     <link rel="stylesheet" href="<?php echo $assets.'/assets/css/page' ?>.css">
 </head>
-<body onload="HOMER()">
+<body>
     <h1><?php the_title(); ?></h1>
     <div id="content">
         <?php 
