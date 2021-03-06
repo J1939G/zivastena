@@ -1,16 +1,20 @@
 <?php 
 function date_humanize( $string , $language){
-    if( $language == 'en-GB') {
+    if( $string == null){
+        $duration = "";
+    } elseif( $language == 'en-GB') {
         if( $string == '1'){
             $duration = "day";
         } else {
             $duration = "days";
         }
     } else {
-        if( preg_match( "/^(1|½|\.5)/" ,$string)){
+        if ( preg_match( "/[1-9]\d/" ,$string )){
+            $duration = "dnů";
+        } elseif( preg_match( "/^(1|½|\.5)/" ,$string)){
             $duration = "den";
         }
-        else if (preg_match( "/[1-4].½/" ,$string)){
+        else if (preg_match( "/^[1-4]/" ,$string)){
             $duration = "dny";
         }
         else {

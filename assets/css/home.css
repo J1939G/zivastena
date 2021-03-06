@@ -1,11 +1,21 @@
 @font-face {
-  font-family: "OpenSansSB";
-  src: url("../../assets/fonts/OpenSans-Bold.ttf");
+  font-family: "Raleway";
+  src: url("../../assets/fonts/Raleway-Light.ttf");
 }
 
-h1, h2, h3, p, a, li, div {
-  font-family: OpenSansSB;
+@font-face {
+  font-family: "AmaticSans";
+  src: url("../../assets/fonts/Amatic-Bold.ttf");
+}
+
+h1, h2, h3 {
+  font-family: AmaticSans;
   font-weight: 400;
+}
+
+p, a, li, div {
+    font-family: Raleway;
+    font-weight: 400;
 }
 
 div#header {

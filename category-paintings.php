@@ -20,10 +20,11 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<script src="<?php echo $assets.'/assets/scripts/live.js' ?>"></script>
-	<link rel="stylesheet" href="<?php echo $assets.'/assets/css/category' ?>.css">
+	<script src="<?php echo $assets.'/assets/scripts/zoom.js' ?>"></script>
+	<link rel="stylesheet" href="<?php echo $assets.'/assets/css/category' ?>.css"/>
     <title><?php echo $cat_name ?></title>
 </head>
-<body>
+<body onload="Listen()">
     <h1 id="title"><?php echo $cat_name ?></h1>
     <div id="content" class="site-content">
     <?php
@@ -49,6 +50,9 @@
             </figure>
         </div>
         <?php } ?>
+    </div>
+    <div id="lightbox">
+        <img src="" alt=""/>
     </div>
     <?php 
         get_footer(); 
