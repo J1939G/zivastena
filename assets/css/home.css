@@ -1,6 +1,6 @@
 @font-face {
-  font-family: "Raleway";
-  src: url("../../assets/fonts/Raleway-Light.ttf");
+  font-family: "Patrick";
+  src: url("../../assets/fonts/PatrickHand-Regular.ttf");
 }
 
 @font-face {
@@ -10,12 +10,11 @@
 
 h1, h2, h3 {
   font-family: AmaticSans;
-  font-weight: 400;
 }
 
 p, a, li, div {
-    font-family: Raleway;
-    font-weight: 400;
+  font-family: Patrick;
+  font-weight: 400;
 }
 
 div#header {
