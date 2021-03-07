@@ -130,7 +130,7 @@ div#categories h2#subTitle {
 div#categories div {
   -webkit-box-shadow: 0 0 5vw #bbb;
           box-shadow: 0 0 5vw #bbb;
-  border-radius: 0.5rem;
+  border-radius: 0.2rem;
   overflow: hidden;
   background-size: 100% auto;
   background-repeat: no-repeat;
