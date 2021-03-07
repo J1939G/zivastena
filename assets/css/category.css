@@ -1,3 +1,52 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "base";
+  src: url("../../assets/fonts/OpenSans-Regular.ttf");
+}
+
+@font-face {
+  font-family: "header";
+  src: url("../../assets/fonts/Oswald.ttf");
+}
+
+@font-face {
+  font-family: "text";
+  src: url("../../assets/fonts/OpenSans-Regular.ttf");
+}
+
+div, p, a, ul, li {
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+h1, h2, h3 {
+  font-family: header;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+p, a, li, div {
+  font-family: base;
+  letter-spacing: 0.05em;
+  font-weight: 400;
+}
+
+h1, h2, h3, a, li, p {
+  color: #222;
+  text-align: center;
+}
+
+h1 {
+  font-weight: 800;
+  font-size: 3rem;
+  line-height: 1em;
+  margin: 0.75em 0;
+}
+
+a, p {
+  text-decoration: none;
+}
+
 @font-face {
   font-family: "OpenSansSB";
   src: url("../../assets/fonts/OpenSans-Bold.ttf");
@@ -143,23 +192,32 @@ div#footer ul li {
   height: auto;
 }
 
+div#footer ul li.current-menu-item {
+  display: none;
+}
+
 div#footer ul li:hover {
   -webkit-box-shadow: 0px 0px 2.5vw 0px #dddddd;
           box-shadow: 0px 0px 2.5vw 0px #dddddd;
 }
 
-div#footer ul li.current-menu-item {
-  display: none;
+div#footer ul li:hover a {
+  color: #666;
 }
 
 div#footer ul li a {
-  color: black;
   font-size: 1.5rem;
   height: 2.5em;
   width: 100%;
   display: block;
   line-height: 2.5em;
   position: relative;
+}
+
+div#footer ul li a::after {
+  content: " ›";
+  font-family: base;
+  color: #666;
 }
 
 div#lightbox {

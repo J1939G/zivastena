@@ -8,8 +8,13 @@
     font-family: "header"
     src: url("../../assets/fonts/Oswald.ttf")
 
+@font-face
+    font-family: "text"
+    src: url("../../assets/fonts/OpenSans-Regular.ttf")
+
+
 div, p, a, ul, li
-    transition: all 0.3s ease-in-out
+    transition: all 0.2s ease-in-out
 
 h1, h2, h3
     font-family: header
@@ -22,6 +27,7 @@ p, a, li, div
     font-weight: 400
 
 $dark-gray: #222
+$light-gray: #666
 
 h1, h2, h3, a, li, p
     color: $dark-gray
@@ -31,5 +37,17 @@ h1
     font-weight: 800
     font-size: 3rem
     line-height: 1em
-    height: 1em
     margin: 0.75em 0
+
+a, p
+    text-decoration: none
+
+@mixin link-arrow
+    &::after 
+        content: " ›"
+        font-family: base
+        color: $light-gray
+
+@mixin link-arrow-parent($tag)
+    &:hover $tag
+        color: $light-gray

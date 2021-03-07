@@ -1,3 +1,5 @@
+@import typography
+    
 @font-face
     font-family: "OpenSansSB"
     src: url("../../assets/fonts/OpenSans-Bold.ttf")
@@ -103,18 +105,22 @@ div#footer
             text-align: center
             transition: all 0.4s ease-in-out
             height: auto
-            &:hover
-                box-shadow: 0px 0px 2.5vw 0px #dddddd
             &.current-menu-item
                 display: none
+            &:hover
+                box-shadow: 0px 0px 2.5vw 0px #dddddd
+                a
+                    color: $light-gray
             a
-                color: black
                 font-size: 1.5rem
                 height: 2.5em
                 width: 100%
                 display: block
                 line-height: 2.5em
                 position: relative
+                @include link-arrow
+                
+                
 
 div#lightbox
     position: fixed

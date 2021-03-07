@@ -9,8 +9,8 @@
 }
 
 div, p, a, ul, li {
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 h1, h2, h3 {
@@ -38,18 +38,8 @@ h1 {
   margin: 0.75em 0;
 }
 
-body {
-  margin: 0px;
-}
-
-@font-face {
-  font-family: "OpenSansSB";
-  src: url("../../assets/fonts/OpenSans-Bold.ttf");
-}
-
-@font-face {
-  font-family: "OpenSansR";
-  src: url("../../assets/fonts/OpenSans-Regular.ttf");
+a, p {
+  text-decoration: none;
 }
 
 #content {
