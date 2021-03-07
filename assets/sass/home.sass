@@ -1,26 +1,11 @@
-@font-face
-    font-family: "Patrick"
-    src: url("../../assets/fonts/PatrickHand-Regular.ttf")
+@import ./typography
 
-@font-face
-    font-family: "AmaticSans"
-    src: url("../../assets/fonts/Amatic-Bold.ttf")
-
-h1, h2, h3
-    font-family: AmaticSans
-
-p, a, li, div
-    font-family: Patrick
-    font-weight: 400
 
 div#header
     width: 100%
-    display: block
-    position: relative
-    text-align: center
-    transition: all 0.4s ease-in-out
+    overflow: hidden
     h1
-        width: 100%
+        z-index: 1
         display: block
         text-align: center
         font-size: 2.5rem
@@ -29,11 +14,10 @@ div#header
 div#categories
     width: 95%
     margin: 0 auto
-    transition: all 0.4s ease-in-out
     display: grid
     grid-template-areas: "grace interior" "grace interior" "children interior" "children subtitle" "children paintings" "public paintings" "public paintings"
-    grid-template-columns: 1fr 1fr
-    grid-template-rows: 22vw 22vw 22vw 22vw 22vw 22vw 22vw
+    grid-template-columns: repeat( 2, 1fr)
+    grid-template-rows: repeat( 7, 22vw)
     grid-gap: 2.5vw
     & div:nth-child(1)        // Children
         grid-area: children
@@ -50,10 +34,11 @@ div#categories
     & div:nth-child(5)        // Public
         grid-area: public
         background-image: url('../img/publicM.jpg')
-    h2
+    h2#subTitle
         grid-area: subtitle
-        margin: 0px
-        text-align: center
+        font-size: 1.35rem
+        line-height: 1.75em
+        margin: 0
         text-shadow: 0px 0px 1rem #bbb
         align-self: center
     div
@@ -68,7 +53,6 @@ div#categories
             width: 100%
             height: 100%
             p
-                display: block
                 background-color: white
                 position: absolute
                 bottom: 0px
@@ -90,8 +74,6 @@ div#categories
 
 div#footer
     width: 100%
-    transition: all 0.4s ease-in-out
-    display: block
     ul
         width: 100%
         margin: 5vw 0
@@ -102,62 +84,73 @@ div#footer
         padding: 0
         justify-content: center
         li
+            flex-basis: 45%
             list-style-type: none
             display: block
             font-size: 1.2rem
-            margin: 0px 0.5rem
+            margin: 0.15em 0
             height: 1.7em
             a
-                color: black
                 font-size: 1.2rem
-                height: 1.7em
+                height: 2em
                 text-shadow: 0px 0px 1rem #bbb
                 line-height: 1.7em
                 display: block
-                position: relative
 
 @media screen and (min-aspect-ratio: 4/5)
     div#categories
         grid-template-areas: "grace children public" "interior children paintings" "interior subtitle paintings"
         grid-template-columns: 1fr 1fr 1fr
-        grid-template-rows: 30vh 25vh 20vh
+        grid-template-rows: 30vh 15vh 30vh
         div
             background-size: cover
     div#footer ul
         margin: 2.5vw 0
-        li a::before
-            margin: 0 1.5rem
+        li
+            flex-basis: 25%
+            a::before
+                margin: 0 1.5rem
 
 @media screen and (min-aspect-ratio: 29/20)
     div#header
-        position: fixed
-        display: block
-        top: 0
-        left: 0
-        width: 50vw
+        margin: 6vh 0
         h1
-            font-size: 4rem
+            font-size: 14vh
+            margin: 0
             height: 1em
             line-height: 1em
-            text-align: left
-            padding-left: 3rem
-    div#footer
-        width: 25vw
-        position: fixed
-        display: block
-        top: 7.25rem
-        z-index: 10
-        ul li
-            margin-bottom: 1.5em
-            flex-basis: 100%
-            & a::before
-                content: ""
+
     div#categories
-        width: 70%
-        margin-left: auto
-        margin-right: 2.5%
-        margin-top: 2.5vw
-        margin-bottom: 5vw
-        grid-template-areas: "blanka children blankb" "blankc children public" "paintings children public" "paintings subtitle public" "paintings interior public" "grace interior blank" "grace interior blankf" "blankr interior blankf"
-        grid-template-rows: 4vw 4vw 20vw 7vw 5vw 15vw 5vw 1vw
-        grid-template-columns: 1fr 1fr 1fr
+        width: 95vw
+        height: 60vh
+        grid-template-areas: "children grace paintings interior public"
+        grid-template-rows: repeat(1, 1fr)
+        grid-template-columns: repeat(5, 1fr)
+        a p
+            font-size: 3.5vh !important
+        #subTitle
+            display: none
+
+    div#footer
+        width: 100%
+        z-index: 10
+        ul
+            margin: 0
+            height: 14vh
+            align-content: center
+            li
+                flex-basis: 22.5%
+                margin: 0
+                height: auto
+                a
+                    display: block
+                    position: relative
+                    height: 100%
+                    width: 100%
+                    text-align: center
+                    margin: 0
+                    height: 2em
+                    font-size: 4vh
+                    line-height: 2em
+                & a::before
+                    display: none

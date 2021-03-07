@@ -1,0 +1,35 @@
+@import responsive
+
+@font-face
+    font-family: "base"
+    src: url("../../assets/fonts/OpenSans-Regular.ttf")
+
+@font-face
+    font-family: "header"
+    src: url("../../assets/fonts/Oswald.ttf")
+
+div, p, a, ul, li
+    transition: all 0.3s ease-in-out
+
+h1, h2, h3
+    font-family: header
+    text-transform: uppercase
+    letter-spacing: 0.2em
+
+p, a, li, div
+    font-family: base
+    letter-spacing: 0.05em
+    font-weight: 400
+
+$dark-gray: #222
+
+h1, h2, h3, a, li, p
+    color: $dark-gray
+    text-align: center
+
+h1
+    font-weight: 800
+    font-size: 3rem
+    line-height: 1em
+    height: 1em
+    margin: 0.75em 0
