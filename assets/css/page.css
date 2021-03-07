@@ -8,6 +8,11 @@
   src: url("../../assets/fonts/Oswald.ttf");
 }
 
+@font-face {
+  font-family: "text";
+  src: url("../../assets/fonts/OpenSans-Regular.ttf");
+}
+
 div, p, a, ul, li {
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
@@ -34,7 +39,6 @@ h1 {
   font-weight: 800;
   font-size: 3rem;
   line-height: 1em;
-  height: 1em;
   margin: 0.75em 0;
 }
 

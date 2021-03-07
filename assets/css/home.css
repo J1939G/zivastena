@@ -47,6 +47,36 @@ a, p {
   text-decoration: none;
 }
 
+@-webkit-keyframes switch_opacity {
+  0% {
+    opacity: 0;
+    color: white;
+  }
+  40% {
+    color: black;
+    opacity: 1;
+  }
+  100% {
+    color: black;
+    opacity: 1;
+  }
+}
+
+@keyframes switch_opacity {
+  0% {
+    opacity: 0;
+    color: white;
+  }
+  40% {
+    color: black;
+    opacity: 1;
+  }
+  100% {
+    color: black;
+    opacity: 1;
+  }
+}
+
 div#header {
   width: 100%;
   overflow: hidden;
@@ -54,11 +84,39 @@ div#header {
 
 div#header h1 {
   z-index: 1;
+}
+
+div#header a.challenge {
+  color: #4e4e4e;
+  text-decoration: none;
   display: block;
-  text-align: center;
-  font-size: 2.5rem;
-  height: 1em;
+  position: absolute;
+  top: calc(3rem * 0.75);
+  left: 0;
+  width: 100%;
+  font-size: 2.75rem;
   line-height: 1em;
+  letter-spacing: 0;
+  height: 3rem;
+  opacity: 0;
+  color: white;
+  z-index: 2;
+  background-color: white;
+  -webkit-animation: switch_opacity 3s infinite alternate;
+          animation: switch_opacity 3s infinite alternate;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+  -webkit-backdrop-filter: blur(1em);
+          backdrop-filter: blur(1em);
+}
+
+div#header a.challenge::before {
+  content: "👉";
+  -webkit-filter: saturate(-10%);
+          filter: saturate(-10%);
+  position: absolute;
+  -webkit-transform: translateX(-127%);
+          transform: translateX(-127%);
 }
 
 div#categories {
@@ -260,6 +318,14 @@ div#footer ul li a::after {
     margin: 0;
     height: 1em;
     line-height: 1em;
+  }
+  div#header a.challenge {
+    font-size: 14vh;
+    height: 1em;
+    top: 6vh;
+  }
+  div#header a.challenge::before {
+    font-size: 10vh;
   }
   div#categories {
     width: 95vw;
