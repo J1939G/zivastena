@@ -1,4 +1,5 @@
 @import ./typography
+@import ./responsive
 
 
 div#header
@@ -97,7 +98,7 @@ div#footer
                 line-height: 1.7em
                 display: block
 
-@media screen and (min-aspect-ratio: 4/5)
+@include respond (square)
     div#categories
         grid-template-areas: "grace children public" "interior children paintings" "interior subtitle paintings"
         grid-template-columns: 1fr 1fr 1fr
@@ -111,7 +112,7 @@ div#footer
             a::before
                 margin: 0 1.5rem
 
-@media screen and (min-aspect-ratio: 29/20)
+@include respond (wide)
     div#header
         margin: 6vh 0
         h1

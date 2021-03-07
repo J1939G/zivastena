@@ -1,4 +1,5 @@
 @import typography
+@import responsive
     
 body
     margin: 0px
@@ -51,7 +52,8 @@ div#footer
                 display: block
                 position: relative
 
-@media screen and (min-aspect-ratio: 4/5)
+@include respond (square)
+
     h1
         padding-left: 3rem
         height: 3rem
@@ -64,7 +66,7 @@ div#footer
             max-width: 50em
             margin: 0 auto 2em auto
 
-@media screen and (min-aspect-ratio: 29/20)
+@include respond (wide)
     h1
         position: fixed
         top: 0
