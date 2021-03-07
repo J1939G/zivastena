@@ -20,6 +20,7 @@ $assets = get_stylesheet_directory_uri();
 <body onscroll="scroller()">
 <div id="header">
         <h1 id='title'><?php echo get_bloginfo('name') ?></h1>
+        <a class='challenge' href="zivachallenge">#zivachallenge</a>
 </div>
 <div id="categories">
     <?php
