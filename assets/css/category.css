@@ -150,18 +150,17 @@ div#content figure a figcaption {
   margin-top: 2.5vw;
 }
 
+div#content figure a figcaption::after {
+  content: " ›";
+  font-family: base;
+  color: #666;
+}
+
 div#content figure a p {
   color: #333;
   margin: 0px;
   font-size: 1rem;
-  padding-left: 2.5vw;
   margin-bottom: 2.5vw;
-}
-
-div#content figure a p::after {
-  content: " ›";
-  font-family: base;
-  color: #666;
 }
 
 div#footer {
