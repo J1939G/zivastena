@@ -8,6 +8,13 @@
 
 require 'modules.php';
 
+global $post;
+$home = get_post_meta( $post->ID, 'home', true);
+$bases = get_post_meta( $post->ID, 'bases', true);
+$registrate = get_post_meta( $post->ID, 'registrate', true);
+$artists = get_post_meta( $post->ID, 'artist', true);
+$top_text = get_post_meta( $post->ID, 'top_text', true);
+
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -18,14 +25,14 @@ require 'modules.php';
     <title><?php the_title(); ?></title>
 </head>
 <body onload="Listen()">
-        <p class="top-text"><?php global $post; echo get_post_meta($post->ID, 'top_text', true) ?></p>
+        <p class="top-text"><?php  echo get_post_meta($post->ID, 'top_text', true) ?></p>
     <header class="header">
         <h1>#zivachallenge</h1>
         <nav>
-            <a href="/zivastena/">Home</a>
-            <a href="#bases">Bases</a>
-            <a href="#registration">Registro</a>
-            <a href="#artists">Artists</a>
+            <a href="/zivastena/"><?php echo $home ?></a>
+            <a href="#bases"><?php echo $bases ?></a>
+            <a href="#registration"><?php echo $registrate ?></a>
+            <a href="#artists"><?php echo $artists ?></a>
         </nav>
     </header>
     <div class="content">
