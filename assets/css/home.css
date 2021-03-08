@@ -53,11 +53,11 @@ a, p {
     color: white;
   }
   40% {
-    color: black;
+    color: #222;
     opacity: 1;
   }
   100% {
-    color: black;
+    color: #222;
     opacity: 1;
   }
 }
@@ -68,11 +68,11 @@ a, p {
     color: white;
   }
   40% {
-    color: black;
+    color: #222;
     opacity: 1;
   }
   100% {
-    color: black;
+    color: #222;
     opacity: 1;
   }
 }
@@ -87,7 +87,7 @@ div#header h1 {
 }
 
 div#header a.challenge {
-  color: #4e4e4e;
+  color: #222;
   text-decoration: none;
   display: block;
   position: absolute;
@@ -212,7 +212,6 @@ div#categories div a p {
   width: 100%;
   z-index: 5;
   text-align: center;
-  color: black;
   font-size: 1.2rem;
   margin: 0;
   line-height: 2.5em;
