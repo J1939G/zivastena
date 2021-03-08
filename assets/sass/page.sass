@@ -35,6 +35,8 @@ div#footer
             margin: 0
             margin-bottom: 0.5em
             height: 1.7em
+            &:hover
+                color: $light-gray
             a
                 color: black
                 font-size: 1.2rem
@@ -43,6 +45,8 @@ div#footer
                 line-height: 1.7em
                 display: block
                 position: relative
+                @include link-arrow
+                
 
 @include respond (square)
 
