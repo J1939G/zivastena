@@ -12,7 +12,6 @@ $assets = get_stylesheet_directory_uri();
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<script src="<?php echo $assets.'/assets/scripts/live.js' ?>"></script>
 	<?php wp_head(); ?>
 	<meta name="google-site-verification" content="O6L-vbgL6zpRpPI-rJ6PTvMxAJXfmRw9jtaBuk9DZRY" />
     <title><?php echo get_bloginfo('name') ?></title>
