@@ -57,12 +57,11 @@ body {
 }
 
 p, figcaption, h1 {
-  font-family: OpenSansSB;
+  font-family: 'base';
 }
 
 h1 {
   width: 100%;
-  display: block;
   font-size: 3rem;
   height: 1.5em;
   font-weight: 400;
@@ -133,6 +132,10 @@ div#content figure a:focus {
   outline: none;
 }
 
+div#content figure a:hover p {
+  color: #666;
+}
+
 div#content figure a img {
   width: 100%;
   vertical-align: text-bottom;
@@ -142,7 +145,6 @@ div#content figure a img {
 div#content figure a figcaption {
   color: black;
   text-decoration: underline;
-  padding-left: 2.5vw;
   font-size: 1.2rem;
   line-height: 1.2em;
   margin-top: 2.5vw;
@@ -154,6 +156,12 @@ div#content figure a p {
   font-size: 1rem;
   padding-left: 2.5vw;
   margin-bottom: 2.5vw;
+}
+
+div#content figure a p::after {
+  content: " ›";
+  font-family: base;
+  color: #666;
 }
 
 div#footer {
