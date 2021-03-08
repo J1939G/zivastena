@@ -132,7 +132,7 @@ div#content figure a:focus {
   outline: none;
 }
 
-div#content figure a:hover p {
+div#content figure a:hover figcaption {
   color: #666;
 }
 
@@ -144,7 +144,6 @@ div#content figure a img {
 
 div#content figure a figcaption {
   color: black;
-  text-decoration: underline;
   font-size: 1.2rem;
   line-height: 1.2em;
   margin-top: 2.5vw;
