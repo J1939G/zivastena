@@ -8,6 +8,8 @@
 
 require 'modules.php';
 
+$lang = substr(get_locale(), 0, 2);
+
 if( $lang == "cs" ){
     $home_url = "/";
 } else if( $lang == "es"){
