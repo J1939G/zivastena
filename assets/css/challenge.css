@@ -92,7 +92,7 @@ a, p {
 .header h1 {
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
-  font-size: 2.75rem;
+  font-size: 2.25rem;
   margin: 0;
   height: 1.2em;
   line-height: 1.2em;
