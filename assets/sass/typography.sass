@@ -27,6 +27,7 @@ p, a, li, div
 
 $dark-gray: #222
 $light-gray: #666
+$link-blue: #06c
 
 h1, h2, h3, a, li, p
     color: $dark-gray
@@ -40,6 +41,10 @@ h1
 
 a, p
     text-decoration: none
+
+a.explicit 
+    color: $link-blue
+    text-decoration: underline
 
 @mixin link-arrow
     &::after

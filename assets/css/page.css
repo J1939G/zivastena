@@ -47,6 +47,11 @@ a, p {
   text-decoration: none;
 }
 
+a.explicit {
+  color: #06c;
+  text-decoration: underline;
+}
+
 .ext-link {
   font-weight: 600;
 }
