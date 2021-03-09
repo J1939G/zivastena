@@ -349,6 +349,7 @@ div#categories div {
   overflow: hidden;
   background-size: 100% auto;
   background-repeat: no-repeat;
+  background-position: center;
 }
 
 div#categories div:hover p {
