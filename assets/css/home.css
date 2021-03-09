@@ -148,6 +148,19 @@ a, p {
   color: #666;
 }
 
+@media screen and (min-aspect-ratio: 4 / 5) {
+  #footer ul, .footer ul {
+    margin: 2.5vw 0;
+  }
+  #footer ul li, .footer ul li {
+    -ms-flex-preferred-size: 25%;
+        flex-basis: 25%;
+  }
+  #footer ul li a::before, .footer ul li a::before {
+    margin: 0 1.5rem;
+  }
+}
+
 @media screen and (min-aspect-ratio: 29 / 20) {
   #footer, .footer {
     width: 100%;
@@ -376,16 +389,6 @@ div#categories div a img {
   }
   div#categories div {
     background-size: cover;
-  }
-  div#footer ul {
-    margin: 2.5vw 0;
-  }
-  div#footer ul li {
-    -ms-flex-preferred-size: 25%;
-        flex-basis: 25%;
-  }
-  div#footer ul li a::before {
-    margin: 0 1.5rem;
   }
 }
 

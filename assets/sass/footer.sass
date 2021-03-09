@@ -29,6 +29,14 @@
                 display: block
                 @include link-arrow
 
+@include respond (square)
+    #footer ul, .footer ul
+        margin: 2.5vw 0
+        li
+            flex-basis: 25%
+            a::before
+                margin: 0 1.5rem
+
 @include respond (wide)
     #footer, .footer
         width: 100%
