@@ -36,7 +36,7 @@ add_filter('the_content', function ($content) {
 
 
 add_action( 'wp_enqueue_scripts', 'styles' );
-add_action( 'wp_enqueue_scripts', 'live_js');
+// add_action( 'wp_enqueue_scripts', 'live_js');
 
 function styles(){
     if ( is_front_page() || is_home()) {
