@@ -6,3 +6,34 @@ p
     font-size: 1.2rem
     a
         color: #1d3abb
+
+.footer, ul.#footer
+    margin-top: 4rem
+    li
+        margin: 0.5em 0
+        flex-basis: 50%
+        height: 2em
+        a
+            font-size: 1.2rem
+
+
+@include respond (wide)
+    .footer, ul.#footer
+        margin-top: 4rem
+        li
+            margin: 0.5em 0
+            flex-basis: 50%
+            height: 2em
+            a
+                font-size: 1.2rem
+
+
+@include respond (square)
+    .footer, ul.#footer
+        margin-top: 4rem
+        li
+            margin: 0.5em 0
+            flex-basis: 50%
+            height: 2em
+            a
+                font-size: 1.2rem

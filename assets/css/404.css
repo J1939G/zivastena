@@ -201,4 +201,16 @@ p {
 p a {
   color: #1d3abb;
 }
+
+.footer, #footer {
+  margin-top: 4rem;
+}
+
+.footer li, #footer li {
+  height: 2em;
+}
+
+.footer li a, #footer li a {
+  font-size: 1rem !important;
+}
 /*# sourceMappingURL=404.css.map */
