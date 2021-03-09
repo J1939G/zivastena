@@ -22,10 +22,10 @@ add_filter('the_content', function ($content) {
     $open = ' <a href="';
     $close = ' target="_blank">$1</a>';
 
-    $fb_regex = '/ (fb|facebook)/i';
+    $fb_regex = '/ (fb|facebook(u|em))/i';
     $fb_replace = "$open$fb_link\" class=\"fb-link ext-link\"$close";
 
-    $ig_regex = '/ (ig|instagram)/i';
+    $ig_regex = '/ (ig|instagram(u|em))/i';
     $ig_replace = "$open$ig_link\" class=\"ig-link ext-link\"$close";
 
     return preg_replace(
