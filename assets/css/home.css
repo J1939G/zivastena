@@ -27,7 +27,7 @@ h1, h2, h3 {
 
 p, a, li, div {
   font-family: base;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.025em;
   font-weight: 400;
 }
 
@@ -91,7 +91,7 @@ h1, h2, h3 {
 
 p, a, li, div {
   font-family: base;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.025em;
   font-weight: 400;
 }
 
