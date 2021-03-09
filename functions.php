@@ -29,8 +29,8 @@ add_filter('the_content', function ($content) {
     $ig_replace = "$open$ig_link\" class=\"ig-link explicit ext-link\"$close";
 
     return preg_replace(
-        [$fb_regex, $ig_regex], 
-        [$fb_replace, $ig_replace], 
+        [$fb_regex, $ig_regex, '/#zivachallenge/i'], 
+        [$fb_replace, $ig_replace, '#ziva_challenge'], 
         $content);
 });
 

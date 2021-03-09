@@ -37,7 +37,7 @@ $top_text = get_post_meta( $post->ID, 'top_text', true);
 <body onload="Listen()">
         <p class="top-text"><?php  echo get_post_meta($post->ID, 'top_text', true) ?></p>
     <header class="header">
-        <h1>#zivachallenge</h1>
+        <h1>#ziva_challenge</h1>
         <nav>
             <a href="<?php echo $home_url ?>"><?php echo $home ?></a>
             <a href="#bases"><?php echo $bases ?></a>

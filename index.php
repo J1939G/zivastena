@@ -32,7 +32,7 @@ if( $lang == "cs" ){
 <body>
 <div id="header">
         <h1 id='title'><?php echo get_bloginfo('name') ?></h1>
-        <a class='challenge' href="/<?php echo $challenge_url; ?>">#zivachallenge</a>
+        <a class='challenge' href="/<?php echo $challenge_url; ?>">#ziva_challenge</a>
 </div>
 <div id="categories">
     <?php
