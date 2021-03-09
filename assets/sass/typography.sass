@@ -12,7 +12,6 @@
     font-family: "text"
     src: url("../../assets/fonts/OpenSans-Regular.ttf")
 
-
 div, p, a, ul, li, figurecaption, figure
     transition: all 0.2s ease-in-out
 
@@ -43,7 +42,7 @@ a, p
     text-decoration: none
 
 @mixin link-arrow
-    &::after 
+    &::after
         content: " ›"
         font-family: base
         color: $light-gray
@@ -51,3 +50,15 @@ a, p
 @mixin link-arrow-parent($tag)
     &:hover $tag
         color: $light-gray
+
+.ext-link
+    font-weight: 600
+    // background: -webkit-linear-gradient(#eee, #333);
+    &.fb-link
+        color: #1a45bd
+    &.ig-link
+        background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%)
+        -webkit-background-clip: text
+        background-clip: text
+        -webkit-text-fill-color: transparent
+        color: transparent

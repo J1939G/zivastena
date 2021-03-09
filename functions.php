@@ -14,6 +14,26 @@ register_nav_menus(array(
     'pages-home'=> __('Pages Menu')
 ));
 
+// replace https://www.facebook.com/zivastena.eu @zivastena.eu
+// replace https://www.instagram.com/ziva_stena/ ziva_stena
+add_filter('the_content', function ($content) {
+    $fb_link = 'https://www.facebook.com/zivastena.eu';
+    $ig_link = 'https://www.instagram.com/ziva_stena/';
+    $open = ' <a href="';
+    $close = ' target="_blank">$1</a>';
+
+    $fb_regex = '/ (fb|facebook)/i';
+    $fb_replace = "$open$fb_link\" class=\"fb-link ext-link\"$close";
+
+    $ig_regex = '/ (ig|instagram)/i';
+    $ig_replace = "$open$ig_link\" class=\"ig-link ext-link\"$close";
+
+    return preg_replace(
+        [$fb_regex, $ig_regex], 
+        [$fb_replace, $ig_replace], 
+        $content);
+});
+
 
 add_action( 'wp_enqueue_scripts', 'styles' );
 add_action( 'wp_enqueue_scripts', 'live_js');
