@@ -6,6 +6,19 @@
  * @subpackage Zivastena
  */
 $assets = get_stylesheet_directory_uri();
+
+
+$lang = substr(get_locale(), 0, 2);
+
+
+if( $lang == "cs" ){
+    $challenge_url = "vyzva";
+} else if( $lang == "es"){
+    $challenge_url = "reto";
+} else {
+    $challenge_url = "challenge";
+}
+
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -19,7 +32,7 @@ $assets = get_stylesheet_directory_uri();
 <body>
 <div id="header">
         <h1 id='title'><?php echo get_bloginfo('name') ?></h1>
-        <a class='challenge' href="zivachallenge">#zivachallenge</a>
+        <a class='challenge' href="/<?php echo $challenge_url; ?>">#zivachallenge</a>
 </div>
 <div id="categories">
     <?php

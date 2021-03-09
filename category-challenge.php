@@ -29,7 +29,7 @@ $top_text = get_post_meta( $post->ID, 'top_text', true);
     <header class="header">
         <h1>#zivachallenge</h1>
         <nav>
-            <a href="/zivastena/"><?php echo $home ?></a>
+            <a href="/"><?php echo $home ?></a>
             <a href="#bases"><?php echo $bases ?></a>
             <a href="#registration"><?php echo $registrate ?></a>
             <a href="#artists"><?php echo $artists ?></a>
