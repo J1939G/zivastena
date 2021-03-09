@@ -14,7 +14,7 @@
   src: url("../../assets/fonts/OpenSans-Regular.ttf");
 }
 
-div, p, a, ul, li {
+div, p, a, ul, li, figurecaption, figure {
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
@@ -45,6 +45,155 @@ h1 {
 
 a, p {
   text-decoration: none;
+}
+
+@font-face {
+  font-family: "base";
+  src: url("../../assets/fonts/OpenSans-Regular.ttf");
+}
+
+@font-face {
+  font-family: "header";
+  src: url("../../assets/fonts/Oswald.ttf");
+}
+
+@font-face {
+  font-family: "text";
+  src: url("../../assets/fonts/OpenSans-Regular.ttf");
+}
+
+div, p, a, ul, li, figurecaption, figure {
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+h1, h2, h3 {
+  font-family: header;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+p, a, li, div {
+  font-family: base;
+  letter-spacing: 0.05em;
+  font-weight: 400;
+}
+
+h1, h2, h3, a, li, p {
+  color: #222;
+  text-align: center;
+}
+
+h1 {
+  font-weight: 800;
+  font-size: 3rem;
+  line-height: 1em;
+  margin: 0.75em 0;
+}
+
+a, p {
+  text-decoration: none;
+}
+
+#footer, .footer {
+  width: 100%;
+}
+
+#footer ul, .footer ul {
+  width: 100%;
+  margin: 5vw 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  padding: 0;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#footer ul li, .footer ul li {
+  -ms-flex-preferred-size: 45%;
+      flex-basis: 45%;
+  list-style-type: none;
+  display: block;
+  font-size: 1.2rem;
+  margin: 0.15em 0;
+  height: 1.7em;
+}
+
+#footer ul li:hover a, .footer ul li:hover a {
+  color: #666;
+}
+
+#footer ul li a, .footer ul li a {
+  font-size: 1.2rem;
+  height: 2em;
+  text-shadow: 0px 0px 1rem #bbb;
+  line-height: 1.7em;
+  display: block;
+}
+
+#footer ul li a::after, .footer ul li a::after {
+  content: " ›";
+  font-family: base;
+  color: #666;
+}
+
+@media screen and (min-aspect-ratio: 29 / 20) {
+  #footer, .footer {
+    width: 18vw;
+    position: fixed;
+    top: calc(2 * 3rem);
+    left: 1.5rem;
+    z-index: 10;
+  }
+  #footer ul, .footer ul {
+    margin: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    padding: 0;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  #footer ul li, .footer ul li {
+    list-style-type: none;
+    display: block;
+    font-size: 1.2rem;
+    margin: 0;
+    height: 3em;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
+  #footer ul li a, .footer ul li a {
+    color: black;
+    text-align: left;
+    font-size: 1.2rem;
+    height: 3em;
+    text-shadow: 0px 0px 1rem #bbb;
+    line-height: 3em;
+    display: block;
+    position: relative;
+  }
 }
 
 @-webkit-keyframes switch_opacity {
@@ -232,59 +381,6 @@ div#categories div a img {
   width: auto;
 }
 
-div#footer {
-  width: 100%;
-}
-
-div#footer ul {
-  width: 100%;
-  margin: 5vw 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  padding: 0;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-div#footer ul li {
-  -ms-flex-preferred-size: 45%;
-      flex-basis: 45%;
-  list-style-type: none;
-  display: block;
-  font-size: 1.2rem;
-  margin: 0.15em 0;
-  height: 1.7em;
-}
-
-div#footer ul li:hover a {
-  color: #666;
-}
-
-div#footer ul li a {
-  font-size: 1.2rem;
-  height: 2em;
-  text-shadow: 0px 0px 1rem #bbb;
-  line-height: 1.7em;
-  display: block;
-}
-
-div#footer ul li a::after {
-  content: " ›";
-  font-family: base;
-  color: #666;
-}
-
 @media screen and (min-aspect-ratio: 4 / 5) {
   div#categories {
         grid-template-areas: "grace children public" "interior children paintings" "interior subtitle paintings";
@@ -339,36 +435,6 @@ div#footer ul li a::after {
     font-size: 3.5vh !important;
   }
   div#categories #subTitle {
-    display: none;
-  }
-  div#footer {
-    width: 100%;
-    z-index: 10;
-  }
-  div#footer ul {
-    margin: 0;
-    height: 14vh;
-    -ms-flex-line-pack: center;
-        align-content: center;
-  }
-  div#footer ul li {
-    -ms-flex-preferred-size: 22.5%;
-        flex-basis: 22.5%;
-    margin: 0;
-    height: auto;
-  }
-  div#footer ul li a {
-    display: block;
-    position: relative;
-    height: 100%;
-    width: 100%;
-    text-align: center;
-    margin: 0;
-    height: 2em;
-    font-size: 4vh;
-    line-height: 2em;
-  }
-  div#footer ul li a::before {
     display: none;
   }
 }
