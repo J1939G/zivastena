@@ -16,7 +16,7 @@ $assets = get_stylesheet_directory_uri();
 	<meta name="google-site-verification" content="O6L-vbgL6zpRpPI-rJ6PTvMxAJXfmRw9jtaBuk9DZRY" />
     <title><?php echo get_bloginfo('name') ?></title>
 </head>
-<body onscroll="scroller()">
+<body>
 <div id="header">
         <h1 id='title'><?php echo get_bloginfo('name') ?></h1>
         <a class='challenge' href="zivachallenge">#zivachallenge</a>
