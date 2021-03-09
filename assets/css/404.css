@@ -27,7 +27,7 @@ h1, h2, h3 {
 
 p, a, li, div {
   font-family: base;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.025em;
   font-weight: 400;
 }
 
@@ -45,6 +45,22 @@ h1 {
 
 a, p {
   text-decoration: none;
+}
+
+.ext-link {
+  font-weight: 600;
+}
+
+.ext-link.fb-link {
+  color: #1a45bd;
+}
+
+.ext-link.ig-link {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 
 @font-face {
@@ -75,7 +91,7 @@ h1, h2, h3 {
 
 p, a, li, div {
   font-family: base;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.025em;
   font-weight: 400;
 }
 
@@ -93,6 +109,22 @@ h1 {
 
 a, p {
   text-decoration: none;
+}
+
+.ext-link {
+  font-weight: 600;
+}
+
+.ext-link.fb-link {
+  color: #1a45bd;
+}
+
+.ext-link.ig-link {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 
 #footer, .footer {
@@ -198,19 +230,48 @@ p {
   font-size: 1.2rem;
 }
 
-p a {
-  color: #1d3abb;
-}
-
-.footer, #footer {
+ul#footer {
   margin-top: 4rem;
 }
 
-.footer li, #footer li {
+ul#footer li {
+  margin: 0.5em 0;
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
   height: 2em;
 }
 
-.footer li a, #footer li a {
-  font-size: 1rem !important;
+ul#footer li a {
+  font-size: 1.2rem;
+}
+
+@media screen and (min-aspect-ratio: 29 / 20) {
+  .footer, ul#footer {
+    margin-top: 4rem;
+  }
+  .footer li, ul#footer li {
+    margin: 0.5em 0;
+    -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
+    height: 2em;
+  }
+  .footer li a, ul#footer li a {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (min-aspect-ratio: 4 / 5) {
+  .footer, ul#footer {
+    margin-top: 4rem;
+  }
+  .footer li, ul#footer li {
+    margin: 0.5em 0;
+    -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
+    height: 2em;
+  }
+  .footer li a, ul#footer li a {
+    font-size: 1.2rem;
+  }
 }
 /*# sourceMappingURL=404.css.map */
