@@ -8,6 +8,14 @@
 
 require 'modules.php';
 
+if( $lang == "cs" ){
+    $home_url = "/";
+} else if( $lang == "es"){
+    $home_url = "/es/";
+} else {
+    $home_url = "/en/";
+}
+
 global $post;
 $home = get_post_meta( $post->ID, 'home', true);
 $bases = get_post_meta( $post->ID, 'bases', true);
@@ -29,7 +37,7 @@ $top_text = get_post_meta( $post->ID, 'top_text', true);
     <header class="header">
         <h1>#zivachallenge</h1>
         <nav>
-            <a href="/"><?php echo $home ?></a>
+            <a href="<?php echo $home_url ?>"><?php echo $home ?></a>
             <a href="#bases"><?php echo $bases ?></a>
             <a href="#registration"><?php echo $registrate ?></a>
             <a href="#artists"><?php echo $artists ?></a>
