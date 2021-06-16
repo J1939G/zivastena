@@ -23,7 +23,14 @@ nav
         border-top: 1px solid $light-gray
         .menu
             padding: 0
-            columns: 2
+            display: flex
+            flex-wrap: wrap
+            justify-content: space-evenly
+            align-content: flex-start
+            margin-left: auto
+            margin-right: auto
+            gap: 1rem 0
+
             li
                 list-style-type: none
                 a
@@ -39,6 +46,7 @@ nav
                 & > ul
                     padding: 0
             & > li
+                flex-basis: 50%
                 & > a
                     font-weight: 600
                     font-size: base-font-size()
@@ -112,9 +120,9 @@ nav
             height: $nav-height
             line-height: $nav-height
             border-bottom: 1px solid transparent
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            display: flex
+            justify-content: center
+            align-items: center
 
             .title
                 font-size: 0.8em
@@ -180,13 +188,15 @@ nav
     $button-height: header-font-size(square) * ($nav-height-multiplier - ($button-border * 2))
     $nav-height: header-font-size(square) * $nav-height-multiplier
 
-    nav.footer
-        .menu
-            width: 80%
-            max-width: 1000px
-            margin-left: auto
-            margin-right: auto
-            columns: 4
+    .unclickable
+        cursor: default
+
+    nav.footer .links .menu
+        width: 80%
+        max-width: 1000px
+
+        & > li
+            flex-basis: 50%
 
     nav.main
         background-color: transparent
@@ -341,6 +351,9 @@ nav
                         //transform-origin: center left
                         //margin-left: 0.6em
                         //transform: rotate(90deg)
+
+    nav.footer .links .menu > li
+        flex-basis: 25%
 
     .content
         margin-top: 1em
