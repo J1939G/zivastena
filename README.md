@@ -22,6 +22,8 @@ After installing Wordpress, follow this steps:
   - Polylang (with czech, spanish and english)
   - Category images (by Muhammad El Zahlan)
   - Category Order and Taxonomy Terms Order (by Nsp-Code)
+- Create required languages in pollylang. Make url modifications be based on content
+- Fix permalinks (/category/post_name)
 - Download test database and import everything
 - Select pages for menus (for each language)
 
