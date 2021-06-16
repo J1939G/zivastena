@@ -309,14 +309,14 @@ nav
                     overflow: visible
                     @include link-arrow-parent('li.menu-item')
                     a
-                        transition-duration: 0s
+                        transition-duration: 0.1s
                         flex-basis: 100%
                         height: $link-height
                         position: relative
                         @include link-arrow
 
                     &:hover
-                        a
+                        & > a
                             color: lighten($light-gray, 10% )
                             text-shadow: 0 0 2px #d4d4d462
                             &::after
