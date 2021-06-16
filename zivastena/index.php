@@ -71,7 +71,7 @@ function print_cat_by_id($id, $class){
             ¡TU PARED VIVE!
         </p>
         <div class='category-container'>
-            <?php foreach( get_categories(['hide_empty' => 0]) as $category ){ 
+            <?php foreach( get_categories(['hide_empty' => 0, 'parent'  => 0]) as $category ){
                 $cat_link = get_site_url() . '/' . $category->slug;
                 $img_link = z_taxonomy_image_url($category->term_id);
             ?>
