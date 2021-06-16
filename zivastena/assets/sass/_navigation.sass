@@ -33,6 +33,10 @@ nav
 
             li
                 list-style-type: none
+
+                &.home-link
+                    display: none
+
                 a
                     text-align: center
                     display: block
@@ -136,22 +140,28 @@ nav
             & li:first-child
                 border-top: 0
 
-        li.menu-item
-            border-top: 1px solid transparent
-            color: $light-gray
-            list-style-type: none
-            text-align: left
-            width: 70%
-            margin: 0 auto
-            line-height: 3em
-            transition: all $menu-open-delay ease-in-out
+        li
+            &.menu-item
+                border-top: 1px solid transparent
+                color: $light-gray
+                list-style-type: none
+                text-align: left
+                width: 70%
+                margin: 0 auto
+                line-height: 3em
+                transition: all $menu-open-delay ease-in-out
+
             a
                 color: $light-gray
+
             .sub-menu
                 padding-left: 2em
                 li.menu-item
                     border: 0px
                     width: 100%
+
+            &.current-menu-item a, &.current-menu-parent > a
+                color: lighten($mid-gray, 40%)
 
         &.full-height
             height: 100vh
