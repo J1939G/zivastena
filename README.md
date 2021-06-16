@@ -30,3 +30,4 @@ After installing Wordpress, follow this steps:
 ## To do:
 - [ ] finish initial version
 - [ ] add testing database
+- [ ] add export for menus
