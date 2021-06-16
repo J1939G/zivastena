@@ -1,0 +1,106 @@
+@import _responsive
+@import _core
+
+@font-face
+    font-family: "base"
+    src: url("../../assets/fonts/OpenSans-Regular.ttf")
+
+@font-face 
+    font-family: "semi-bold"
+    src: url("../../assets/fonts/OpenSans-SemiBold.ttf")
+
+@font-face
+    font-family: "header"
+    src: url("../../assets/fonts/Oswald.ttf")
+
+div, p, a, ul, li, figurecaption, figure, select
+    transition: all 0.2s ease-in-out
+
+h1, h2, h1 > a, h2 > a
+    font-family: header
+    text-transform: uppercase
+    letter-spacing: 0.1em
+
+p, a, li, div, select
+    font-family: base
+    letter-spacing: 0.025em
+    font-smoothing: antialiased
+    font-weight: 400
+
+h1, h2, h3, a, li, p
+    color: $mid-gray
+    -webkit-font-smoothing: antialiased
+    text-align: center
+
+@function base-font-size($breakpoint:mobile)
+    @if $breakpoint == mobile
+        @return 1.2rem
+    @if $breakpoint == square
+        @return 1.2rem * 1.1
+    @if $breakpoint == wide
+        @return 1.2rem
+
+@function header-font-size($breakpoint:mobile)
+    @if $breakpoint == mobile
+        @return base-font-size(mobile) * 2.25
+    @if $breakpoint == square
+        @return base-font-size(square) * 2.5
+    @if $breakpoint == wide
+        @return base-font-size(square) * 2
+
+h1, h1 > a
+    font-weight: 500
+    font-size: header-font-size()
+    line-height: 1em
+    margin: 0.5em 0
+
+h2, h2 > a 
+    font-weight: 500
+    letter-spacing: 0.1em
+
+a, p
+    text-decoration: none
+    font-size: base-font-size()
+    line-height: 1.5em
+
+@include respond (square)
+    h1
+        font-size: header-font-size(square)
+    a, p
+        font-size: base-font-size(square)
+
+@include respond (wide)
+    h1
+        font-size: header-font-size(wide)
+    a, p
+        font-size: base-font-size(wide)
+
+a.explicit
+    color: $link-blue
+    text-decoration: underline
+
+@mixin link-arrow
+    &::after
+        content: " ›"
+        display: inline-block
+        font-family: base
+        color: inherit
+        margin-left: 0.2em
+
+@mixin link-arrow-parent($tag)
+    &:hover $tag
+        color: lighten($light-gray, 0.5)
+        &::after
+            margin-left: 0.3em
+                //transform: tranlsateX(50%)
+
+@mixin box-shadow-under($shadow)
+    &::before
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: -1;
+        box-shadow: $shadow

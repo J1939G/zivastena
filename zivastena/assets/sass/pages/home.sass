@@ -1,0 +1,147 @@
+@import ../_typography
+@import ../_responsive
+@import ../_navigation
+
+.category-container
+
+    margin-top: 5em
+
+    .category
+        width: 100%
+        box-sizing: border-box
+        padding: 0 0 0.5em 0
+        // border: 2px solid $card-base
+        // border-radius: 0.2em
+
+        overflow: hidden
+        display: flex
+        flex-wrap: wrap
+        flex-direction: column
+
+        &::before
+            content: ""
+            display: block
+            position: relative
+            height: 2px
+            width: 90%
+            background-color: darken($card-base, 20%)
+            left: 5%
+            top: 0
+
+        h2
+            font-family: 'base'
+            text-transform: none
+            letter-spacing: 0.01em
+            margin: 0.6em auto
+            font-weight: 600
+
+        .img-container
+            background-position: center
+            background-size: cover
+            transition: all 0.3s ease-in-out
+            width: 90vw
+            margin: 0 auto
+            height: 45vw
+            display: block
+            border-radius: $radius
+            overflow: hidden
+
+        p
+            margin: 0.5em auto 
+            padding: 0 1rem
+
+        .see-more
+            color: $link-blue
+            @include link-arrow
+            margin-top: auto
+            &:hover
+                text-decoration: underline
+
+@include respond (square)
+
+    $gap: 2.5vw
+
+    .category-container
+        display: grid
+        grid-template-columns: 1fr 1fr
+        width: 100vw - 2 * $gap
+        margin-left: auto
+        margin-right: auto
+        grid-gap: $gap
+
+        .category
+            padding: 0
+            overflow: hidden
+            border-radius: $radius
+            background-color: transparentize($card-base, 0.5)
+            //border: 1px solid $card-base
+
+
+            &:hover
+                background-color: transparentize($card-base, 0.125)
+
+            &::before
+                display: none
+
+            .img-container
+                //grid-row: 4
+                margin: 0
+                border-radius: 0
+                width: 100%
+                height: 24vw
+
+@include respond (wide)
+
+    $gap: 2vw
+
+    .content
+        font-size: base-font-size(wide)
+        p
+            max-width: 800px
+            margin-left: auto
+            margin-right: auto
+            padding: 1.5em 0
+
+        .category-container
+            grid-template-columns: 1fr 1fr 1fr 1fr
+            grid-gap: $gap
+            justify-content: space-evenly
+            width: 100vw - 2 * $gap
+            max-width: 1200px
+
+            .category
+                padding: 0
+                font-size: base-font-size(wide)
+                // background-color: transparentize($card-base, 0.75 )
+                transition: all 0.2s ease-in-out
+                display: flex
+                grid-gap: 0
+                flex-wrap: wrap
+                flex-direction: column
+
+                .img-container
+                    height: calc( 100vw / 9)
+                    //width: 95%
+                    ///box-shadow: 0 0 10px 0 $light-gray
+                    margin: 0 auto
+                    //border-radius: $radius
+                    margin-bottom: 0.5em
+
+                h2
+                    margin: 0.5em auto
+                    font-size: base-font-size(wide) * 1.2
+                p
+                    font-size: base-font-size(wide)
+                    padding: 0 1em
+                    margin: 0.25em 0
+
+                .see-more
+                    padding: 0.5em 0
+                    margin-top: auto
+//     .category-container
+//         padding: 0 1vw
+//         display: grid
+//         grid-template-columns: repeat(4, 1fr)
+//         grid-gap: 1vw
+// 
+// 

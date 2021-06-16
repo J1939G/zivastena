@@ -1,0 +1,98 @@
+@import ../_typography
+@import ../_navigation
+@import ../_responsive
+
+.content
+    .posts-container
+        width: calc(100% - 5vw)
+        margin: 0 auto
+        column-count: 2
+        column-gap: 2.5vw
+        overflow: visible
+        box-sizing: border-box
+
+        & .protection:first-child
+            margin-top: 0
+
+        .protection
+            overflow: visible
+            z-index: 3
+            transform: translateZ(0) // hack for box-shadow
+            margin: 1.25vw auto
+
+            @for $i from 0 to 100
+                &:nth-child(#{$i}) .post
+                    $opacity: random(25)/100
+                    background-color: transparentize($card-base, $opacity)
+            .post
+                display: inline-block
+                overflow: hidden
+                border-radius: $radius
+                padding-bottom: base-font-size() * 0.75 * 0.5
+                width: 100%
+
+                img
+                    width: 100%
+                    height: auto
+
+                .title
+                    font-family: 'semi-bold'
+                    font-size: base-font-size() * 0.85
+                    margin: 0.125em auto
+                    letter-spacing: 0.1px
+                    line-height: 1.2em
+                    font-weight: 400
+                    @include link-arrow
+                    &::after
+                        font-family: 'semi-bold'
+                        font-size: base-font-size() * 0.85
+                        margin: 0
+                        margin-left: 0.2rem
+
+                p
+                    font-size: base-font-size() * 0.75
+                    margin: 0
+
+@include respond (square)
+    .content .posts-container
+        column-count: 3
+
+        .protection .post 
+            .title 
+                font-size: base-font-size(square)
+                &::after
+                    font-size: base-font-size(square)
+
+
+
+@include respond (wide)
+
+    h1 
+        padding: 0.25em 0
+
+    .content .posts-container
+        column-count: 4
+        column-gap: 1.5vw
+        max-width: 1000px
+
+        .protection
+            margin-top: 1.5vw
+
+            .post
+                .title
+                    font-size: base-font-size(wide)
+                    &::after 
+                        font-size: base-font-size(wide)
+
+    nav.main, nav.main.full-height
+        top: 0
+        height: unset
+
+        .title-wrapper
+            display: none
+
+        div.links
+            padding-bottom: 0
+
+            .menu .menu-item .sub-menu
+                top: 1.75em

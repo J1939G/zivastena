@@ -1,0 +1,345 @@
+@import _typography
+@import _responsive
+
+$nav-height-multiplier: 1.4
+$menu-open-delay: 0.6s
+$button-border: 0.4
+$button-height: header-font-size() * ($nav-height-multiplier - ($button-border * 2))
+$cross-width: 0.2rem
+$bar-color: transparentize($mid-gray, 0.1 )
+$nav-height: header-font-size() * $nav-height-multiplier
+
+body.block-scroll
+    overflow-y: hidden
+nav
+    z-index: 10
+    overflow: hidden
+    transition: all $menu-open-delay ease-in-out 0s, background-color ($menu-open-delay / 2) ease-in-out 0s
+
+    &.footer
+        width: calc( 100% - 2rem)
+        margin: 0 auto
+        margin-top: 1rem
+        border-top: 1px solid $light-gray
+        .menu
+            padding: 0
+            columns: 2
+            li
+                list-style-type: none
+                a
+                    text-align: center 
+                    display: block
+                    color: lighten($mid-gray, 20%)
+                    width: 100%
+                    font-size: base-font-size() * 0.9
+                    min-height: 2em
+                    @include link-arrow
+                    &::after
+                        color: $dark-gray
+                & > ul
+                    padding: 0
+            & > li
+                & > a
+                    font-weight: 600
+                    font-size: base-font-size()
+                    color: $dark-gray
+                    &::after
+                        display: none
+                & > a:last-child
+                    @include link-arrow
+                    &::after
+                        color: $dark-gray
+            //display: flex 
+            //flex-wrap: wrap
+            //& > li 
+            //    flex-basis: 50%
+
+        .bottom-links
+            width: 90%
+            margin: 0 auto
+            line-height: 2em
+            text-align: center
+            div
+                margin-bottom: 0.5em
+            .languages
+                text-align: center
+                select
+                    border-radius: 5px
+                    background-color: transparent
+
+    &.main
+        width: 100%
+        background-color: $bar-color
+        backdrop-filter: blur(0.4em)
+        color: $light-gray
+        position: fixed
+        top: 0
+        height: $nav-height
+
+        button.menu-toggle
+            z-index: 10
+            padding: 0
+            margin: 0
+            border: 0
+            position: absolute
+            display: block
+            background-color: transparent
+            padding: $nav-height * 0.25
+            padding-left: $nav-height * 0.125
+            padding-right: $nav-height * 0.325
+
+            width: $nav-height
+            height: $nav-height
+            // height: $button-height
+            // width: $button-height
+            span
+                display: block
+                position: absolute
+                background-color: $light-gray
+                height: $cross-width
+                width: 50%
+                transition: all ($menu-open-delay * 0.75) ease-in-out
+                transform: rotate(0deg)
+                &.top
+                    top: 0.25 * $nav-height + (1/3 * $button-height) - (0.5 * $cross-width)
+                &.bottom
+                    top: 0.25 * $nav-height + (2/3 * $button-height) + (0.5 * $cross-width)
+
+        .title-wrapper
+            width: auto
+            margin: 0 auto
+            transition: all ease-in-out $menu-open-delay
+            height: $nav-height
+            line-height: $nav-height
+            border-bottom: 1px solid transparent
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .title
+                font-size: 0.8em
+                color: $light-gray
+                padding: 0 1rem
+                margin: 0
+
+        ul.menu
+            padding: 0
+            margin: 0
+            & li:first-child
+                border-top: 0
+
+        li.menu-item
+            border-top: 1px solid transparent
+            color: $light-gray
+            list-style-type: none
+            text-align: left
+            width: 70%
+            margin: 0 auto
+            line-height: 3em
+            transition: all $menu-open-delay ease-in-out
+            a
+                color: $light-gray
+            .sub-menu
+                padding-left: 2em
+                li.menu-item
+                    border: 0px
+                    width: 100%
+
+        &.full-height
+            height: 100vh
+            .links
+                height: calc(100vh - #{$nav-height})
+                overflow-y: auto
+                & > *:last-child
+                    padding-bottom: 1em
+            //background-color: $dark-gray
+            // background-color: $dark-gray
+            .title-wrapper
+                transition: all $menu-open-delay ease-in-out
+                border-bottom: 1px solid $light-gray
+
+            .menu-item
+                border-top: 1px solid $light-gray
+                transition: all $menu-open-delay ease-in-out
+
+            button.menu-toggle span
+                //width: 100%
+                top: 0.25 * $nav-height
+                &.top
+                    transform: translateY($button-height / 2) rotate(-45deg)
+                    //width: $button-height * 1 //.41421356237
+                &.bottom
+                    transform: translateY($button-height / 2) rotate(45deg)
+                    //width: $button-height * 1 //.41421356237
+
+.content
+    margin-top: header-font-size() * $nav-height-multiplier + 1rem
+    z-index: 5
+
+@include respond (square)
+    $button-height: header-font-size(square) * ($nav-height-multiplier - ($button-border * 2))
+    $nav-height: header-font-size(square) * $nav-height-multiplier
+
+    nav.footer
+        .menu
+            width: 80%
+            max-width: 1000px
+            margin-left: auto
+            margin-right: auto
+            columns: 4
+
+    nav.main
+        background-color: transparent
+        backdrop-filter: none
+        height: $nav-height
+        overflow: visible
+
+        .title-wrapper
+            background-color: $bar-color
+            backdrop-filter: blur(0.5em)
+
+        button.menu-toggle
+            height: $nav-height
+            width: $nav-height
+            padding: $nav-height * 0.25
+            left: 0
+            top: 0
+            span
+                &.top
+                    top: 0.25 * $nav-height + (1/3 * $button-height) - (0.5 * $cross-width)
+                &.bottom
+                    top: 0.25 * $nav-height + (2/3 * $button-height) + (0.5 * $cross-width)
+
+        .links
+            width: 45%
+            background-color: $bar-color
+            backdrop-filter: blur(0.5em)
+            height: calc(100vh - #{$nav-height})
+            padding-bottom: 1rem
+            transition-duration: $menu-open-delay
+            transform: translateX(-100%)
+
+        &.full-height
+            height: header-font-size(square) * $nav-height-multiplier
+            div.links
+                height: calc(100vh - #{$nav-height})
+                transform: translateX(0%)
+            button.menu-toggle span
+                //width: 100%
+                top: 0.30 * $nav-height
+
+    .content
+        margin-top: header-font-size(square) * $nav-height-multiplier + 0.5rem
+
+@include respond (wide)
+    body, body.scroll-block
+        overflow-y: auto
+
+    $link-height: base-font-size(wide) * 1.5
+
+    nav.main, nav.main.full-height
+        position: sticky
+        top: -(header-font-size(wide) * $nav-height-multiplier)
+        height: header-font-size(wide) * $nav-height-multiplier + $link-height
+        background-color: $bar-color
+        backdrop-filter: blur(0.5rem)
+
+        button.menu-toggle
+            display: none
+
+        .title-wrapper
+            height: header-font-size(wide) * $nav-height-multiplier
+            flex-basis: 100%
+            background-color: transparent
+            backdrop-filter: none
+            border: 0
+            .title
+                height: header-font-size(wide) * $nav-height-multiplier
+                line-height: header-font-size(wide) * $nav-height-multiplier
+                font-size: header-font-size(wide)
+
+        div.links
+            width: 100%
+            max-width: 1200px
+            margin: 0 auto
+            height: $link-height
+            transform: none
+            background-color: transparent
+            backdrop-filter: none
+
+            .menu
+                display: flex
+                flex-wrap: wrap
+                justify-content: space-evenly
+                height: $link-height
+                display: flex
+                flex-wrap: wrap
+                justify-content: space-evenly
+                .menu-item
+                    display: flex
+                    border: 0
+                    margin: 0
+                    text-align: center
+                    line-height: $link-height
+                    height: $link-height
+                    overflow: hidden
+                    flex-basis: 15%
+                    transition: all $menu-open-delay ease-in-out
+                    overflow: visible
+                    @include link-arrow-parent('li.menu-item')
+                    a
+                        transition-duration: 0s
+                        flex-basis: 100%
+                        height: $link-height
+                        position: relative
+                        @include link-arrow
+
+                    &:hover
+                        a
+                            color: lighten($light-gray, 10% )
+                            text-shadow: 0 0 2px #d4d4d462
+                            &::after
+                                color: inherit
+
+                        .sub-menu
+                            max-height: 5 * 2.5em
+
+                    .sub-menu
+                        position: absolute
+                        box-sizing: border-box
+                        width: 15%
+                        max-width: 1200px * 0.15
+                        top: header-font-size(wide) * $nav-height-multiplier + $link-height
+                        transition: all $menu-open-delay ease-in-out
+                        max-height: 0
+                        overflow: hidden
+                        display: flex
+                        flex-wrap: wrap
+                        border-radius: 0 0 $radius $radius
+                        background-color: rgb(64, 64, 64)
+                        align-content: space-evenly
+
+                        & li.menu-item:first-child
+                            padding-top: 1.25em
+                        & li.menu-item:last-child
+                            padding-bottom: 0em
+
+                        li.menu-item
+                            position: relative
+                            flex-basis: 100%
+                            line-height: 2.5em
+                            min-height: 2.5em
+                            padding-left: 1rem
+                            text-align: left
+                            margin: 0
+                            a
+                                font-size: 0.9em
+                                text-align: left
+                    &.menu-item-has-children > a::after
+                        display: none
+                        //transform-origin: center left
+                        //margin-left: 0.6em
+                        //transform: rotate(90deg)
+
+    .content
+        margin-top: 1em

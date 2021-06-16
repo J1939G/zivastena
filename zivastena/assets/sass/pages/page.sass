@@ -1,0 +1,21 @@
+@import ../typography
+@import ../navigation
+@import ../_responsive
+
+.content 
+    margin-left: auto 
+    margin-right: auto
+    padding: 0 1rem
+    box-sizing: border-box
+    & *:last-child
+        padding-bottom: 2rem
+        
+
+@include respond (square)
+    .content > *
+        padding: 0 2rem
+
+@include respond (wide)
+    .content 
+        padding: 0 2rem 
+        max-width: 1000px
