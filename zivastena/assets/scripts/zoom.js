@@ -1,71 +1,91 @@
+let img = null
+let img_width = 0;
+let img_height = 0;
+let img_pos = 0;
+let img_src = 0;
+
+jQuery(document).ready(function() {
+    jQuery('body').append('<div class="zoombox fxbox"><div>');
+    jQuery('body').append('<div class="blurbox fxbox"><div>');
+
+    jQuery('div.fxbox').click(function() {
+        if (jQuery('.zoombox').hasClass('zoomed')) {
+            jQuery('.zoombox').css({
+                top: img.offset().top - jQuery(window).scrollTop(),
+                left: img.offset().left,
+                width: img.width(),
+                height: img.height()
+            });
+
+            jQuery('.blurbox').css({ backdropFilter: 'blur(0)', backgroundColor: 'transparent' });
 
 
-function IsWider(figure){
-    let image = figure.querySelector('img')
-    return image.offsetHeight/image.offsetWidth < window.innerHeight/window.innerWidth ? true : false
-}
-function formFactor(figure) {
-    let image = figure.querySelector('img')
-    return image.offsetHeight/image.offsetWidth
-}
+            setTimeout(function() {
+                //jQuery('body').toggleClass('noscroll');
+                img.removeClass('zoomed');
+                setTimeout(function() {
+                    jQuery('.zoombox').removeClass('zoomed');
+                    jQuery('.blurbox').removeClass('zoomed');
+                }, 1);
+            }, 750);
 
-function Position(container){
-    let image = container.querySelector('img')
-    let zoomedImg = document.querySelector('#lightbox img')
-    zoomedImg.style.left = image.getBoundingClientRect().x + 'px'
-    zoomedImg.style.top = image.getBoundingClientRect().y + 'px'
-    zoomedImg.width = image.offsetWidth
-    zoomedImg.height = image.offsetHeight
-    zoomedImg.src = image.src
-    return image.offsetHeight/image.offsetWidth
-}
+        }
+    })
 
-function Px(pixels){
-    return Math.round(pixels,0) + 'px'
-}
+    jQuery('img').click(function() {
 
-function BringForward(figureIsWider, formFactor){
-    document.querySelector('#content').style.filter = 'blur(0.75rem)';
-    let lightboxImg = document.querySelector('#lightbox img')
-    lightboxImg.classList.add("focus")
-    
-    if( figureIsWider){
-        var leftMargin = Px(window.innerWidth*0.025)
-        var topMargin = Px( (window.innerHeight - (window.innerWidth*0.95*formFactor) ) / 2 )
-        lightboxImg.style.height = 'auto'
-        lightboxImg.style.width = Px(window.innerWidth*0.95)
-    } else {
-        var topMargin = Px(window.innerHeight*0.025)
-        var leftMargin = Px( (window.innerWidth - (window.innerHeight*0.95/formFactor) ) / 2 )
-        lightboxImg.style.height = Px(window.innerHeight*0.95)
-        lightboxImg.style.width = 'auto'
-    }
-    lightboxImg.style.left = leftMargin
-    lightboxImg.style.top = topMargin
-    document.querySelector('#lightbox').style.pointerEvents = 'all';
-}
+        //jQuery('body').toggleClass('noscroll');
+        img = jQuery(this)
 
+        img_width = jQuery(this).width();
+        img_height = jQuery(this).height();
+        img_pos = jQuery(this).offset();
+        img_src = jQuery(this).attr('src');
 
-function CleanUp(){
-    let zoomedImg = document.querySelector('#lightbox img')
-    document.querySelector('#content').style.filter = 'none'
-    zoomedImg.removeAttribute("style");
-    zoomedImg.style.opacity = '0'
-    zoomedImg.classList.remove("focus")
-    document.querySelector('#lightbox').style.pointerEvents = 'none'
-}
+        let w_height = jQuery(window).height();
+        let w_width = jQuery(window).width();
+        let vp_ratio = w_width / w_height;
+        let img_ratio = img.width() / img.height();
+        let is_wide = vp_ratio < img_ratio; // true if the images width extended makes whole image visible, false otherwhise
 
-function Resize(container){
-    let formFactor = Position(container)
-    BringForward(IsWider(container), formFactor);
-}
+        jQuery('.zoombox').css({
+            backgroundImage: 'url(' + img.attr('src') + ')',
+            top: img_pos.top - jQuery(window).scrollTop(),
+            left: img_pos.left,
+            width: img.width(),
+            height: img.height()
+        });
+
+        jQuery('.blurbox').toggleClass('zoomed').css({ backdropFilter: 'blur(0.5em)', backgroundColor: 'rgba(0, 0, 0, 0.2)' });
+
+        let new_width = 0;
+        let new_height = 0;
+        let new_top = 0;
+        let new_left = 0;
+
+        if (is_wide) {
+            new_width = 'calc(' + w_width + 'px - 5vw)';
+            new_height = 'calc(' + (w_width / img_ratio) + 'px)';
+            new_top = 'calc((' + w_height + 'px - (' + (w_width / img_ratio) + 'px)) / 2)';
+            new_left = '2.5vw';
+        } else {
+            new_height = 'calc(' + w_height + 'px - 5vw)';
+            new_width = 'calc( (' + w_height + 'px - 5vw) * ' + img_ratio + ')';
+            new_top = '2.5vw';
+            new_left = 'calc((' + w_width + 'px - ((' + w_height + 'px - 5vw) *' + img_ratio + ')) / 2)';
+        }
 
 
-function Listen(){
-    let figures = document.getElementsByClassName('protection');
-    for( var i = 0; i < figures.length; i++){
-        let currentFigure = figures[i];
-        currentFigure.addEventListener('click', function(){ Resize( currentFigure ) } );
-    }
-    document.querySelector('#lightbox').addEventListener('click', function(){ CleanUp()});
-}
+        setTimeout(
+            function() {
+                jQuery('.zoombox').toggleClass('zoomed')
+                img.toggleClass('zoomed');
+                jQuery('.zoombox').css({
+                    top: new_top,
+                    left: new_left,
+                    width: new_width,
+                    height: new_height
+                });
+            }, 0);
+    });
+});

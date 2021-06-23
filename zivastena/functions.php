@@ -40,8 +40,13 @@ function mobile_theme_color() {
 add_action( 'wp_head', 'mobile_theme_color');
 
 
-function scripts(){
-        wp_enqueue_script( 'navigation', get_stylesheet_directory_uri(). '/assets/scripts/navigation.js', array('jquery') );
+function scripts()
+{
+    wp_enqueue_script('navigation', get_stylesheet_directory_uri(). '/assets/scripts/navigation.js', array('jquery'));
+
+    if (is_single()) {
+        wp_enqueue_script('zoom', get_stylesheet_directory_uri().'/assets/scripts/zoom.js', array('jquery'));
+    }
 }
 
 function live_js(){
