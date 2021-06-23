@@ -37,7 +37,7 @@ nav
                 &.home-link
                     display: none
 
-                a
+                a, button
                     text-align: center
                     display: block
                     color: lighten($mid-gray, 20%)
@@ -155,8 +155,10 @@ nav
                 color: $light-gray
 
             .sub-menu
-                padding-left: 2em
+                text-align: center
+                padding: 0
                 li.menu-item
+                    padding: 0
                     border: 0px
                     width: 100%
 
@@ -285,6 +287,7 @@ nav
             margin: 0 auto
             height: $link-height
             transform: none
+            padding-bottom: 0
             background-color: transparent
             backdrop-filter: none
 
@@ -293,22 +296,18 @@ nav
                 flex-wrap: wrap
                 justify-content: space-evenly
                 height: $link-height
-                display: flex
-                flex-wrap: wrap
-                justify-content: space-evenly
 
-                .menu-item
+                & > .menu-item
+                    flex-basis: calc(95% / 5)
                     display: flex
                     border: 0
                     margin: 0
-                    text-align: center
                     line-height: $link-height
                     height: $link-height
                     overflow: hidden
-                    flex-basis: 15%
-                    transition: all $menu-open-delay ease-in-out
                     overflow: visible
                     @include link-arrow-parent('li.menu-item')
+
                     a
                         transition-duration: 0.1s
                         flex-basis: 100%
@@ -316,21 +315,12 @@ nav
                         position: relative
                         @include link-arrow
 
-                    &:hover
-                        & > a
-                            color: lighten($light-gray, 10% )
-                            text-shadow: 0 0 2px #d4d4d462
-                            &::after
-                                color: inherit
 
-                        .sub-menu
-                            max-height: 5 * 2.5em
 
                     .sub-menu
                         position: absolute
                         box-sizing: border-box
-                        width: 15%
-                        max-width: 1200px * 0.15
+                        width: calc(95% / 5)
                         top: header-font-size(wide) * $nav-height-multiplier + $link-height
                         transition: all $menu-open-delay ease-in-out
                         max-height: 0
@@ -341,9 +331,9 @@ nav
                         background-color: rgb(64, 64, 64)
                         align-content: space-evenly
 
-                        & li.menu-item:first-child
+                        & li.menu-item:first-child a
                             padding-top: 1.25em
-                        & li.menu-item:last-child
+                        & li.menu-item:last-child a
                             padding-bottom: 0em
 
                         li.menu-item
@@ -351,17 +341,28 @@ nav
                             flex-basis: 100%
                             line-height: 2.5em
                             min-height: 2.5em
-                            padding-left: 1rem
-                            text-align: left
+                            text-align: center
                             margin: 0
                             a
                                 font-size: 0.9em
-                                text-align: left
+                                text-align: center
                     &.menu-item-has-children > a::after
                         display: none
                         //transform-origin: center left
                         //margin-left: 0.6em
                         //transform: rotate(90deg)
+
+                & .menu-item
+                    transition: all $menu-open-delay ease-in-out
+
+                    &:hover
+                        & > a
+                            color: lighten($light-gray, 10% )
+                            text-shadow: 0 0 2px #d4d4d462
+                            &::after
+                                color: inherit
+                        .sub-menu
+                            max-height: 5 * 2.5em
 
     nav.footer .links .menu > li
         flex-basis: 25%
