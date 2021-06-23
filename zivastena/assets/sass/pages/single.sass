@@ -1,15 +1,8 @@
 @import ../_typography
 @import ../_navigation
 @import ../_responsive
+@import ../_zoom
 
-$delay: 0.75s
-$timing-function: ease-in-out
-
-body.noscroll 
-    overflow-y: hidden
-
-nav 
-    z-index: 7
 
 .wp-block-gallery 
     width: 95%
@@ -23,53 +16,10 @@ nav
         background-color: transparent
         overflow: hidden
 
-        img 
-            opacity: 1
-            transition: none
-
-            &.zoomed
-                opacity: 0
-
 .content 
     margin-top: 1em
     z-index: 5
 
-.zoombox 
-    top: 0
-    left: 0
-    display: block
-    visibility: hidden
-    border-radius: $radius
-    overflow: hidden
-    cursor: zoom-in
-    background-position: center
-    background-size: cover
-    position: fixed
-    transition: none
-    z-index: -5
-
-.zoomed.zoombox
-    z-index: 10
-    visibility: visible
-    cursor: zoom-out
-    transition-duration: $delay
-    transition-timing-function: $timing-function
-    transition-property: top, left, width, height
-
-.blurbox
-    position: fixed
-    top: 0
-    left: 0
-    height: 100%
-    width: 100%
-    z-index: -5
-    display: block
-    transition: backdrop-filter $delay $timing-function, background-color ($delay * 0.75) $timing-function
-    backdrop-filter: blur(0)
-    background-color: transparent
-
-    &.zoomed
-        z-index: 7
 
 //@include respond(square)
 body > h1 

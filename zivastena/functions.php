@@ -29,6 +29,9 @@ function styles()
     if (is_category()) {
         enqueue_style('category');
     }
+    if (isChild()) {
+        enqueue_style('category-paintings');
+    }
     if (is_single()) {
         enqueue_style('single');
     }
@@ -56,7 +59,7 @@ function scripts()
 {
     wp_enqueue_script('navigation', get_stylesheet_directory_uri(). '/assets/scripts/navigation.js', array('jquery'));
 
-    if (is_single()) {
+    if (is_single() || isChild()) {
         wp_enqueue_script('zoom', get_stylesheet_directory_uri().'/assets/scripts/zoom.js', array('jquery'));
     }
 }
@@ -67,6 +70,27 @@ function live_js()
 }
 
 add_filter('show_admin_bar', '__return_false');
+
+// template selection for categories
+
+function isChild()
+{
+    return cat_is_ancestor_of(get_cat_id('paintings'), get_query_var('cat')) ||
+    cat_is_ancestor_of(get_cat_id('obrazy'), get_query_var('cat')) ||
+    cat_is_ancestor_of(get_cat_id('cuadros'), get_query_var('cat'));
+}
+
+function myTemplateSelect()
+{
+    if (is_category() && !is_feed()) {
+        if (isChild()) {
+            load_template(TEMPLATEPATH . '/category-paintings.php');
+            exit;
+        }
+    }
+}
+
+add_action('template_redirect', 'myTemplateSelect');
 
 // clean wp_head ------------------------------------------------------------
 
