@@ -9,8 +9,7 @@ add_theme_support('post-thumbnails');
 add_theme_support('html5', array( 'gallery', 'caption' ));
 
 register_nav_menus(array(
-    'main' => __( 'Main navigation'),
-    'footer'=> __('Footer menu')
+    'main' => __('Main navigation')
 ));
 
 
