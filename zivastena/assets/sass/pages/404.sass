@@ -2,34 +2,12 @@
 @import ../_responsive
 @import ../_navigation
 
+@include respond(wide)
+    h1 
+        padding-bottom: 1em
+
 p
     font-size: 1.2rem
 
-ul#footer
-    margin-top: 4rem
-    li
-        margin: 0.5em 0
-        flex-basis: 50%
-        height: 2em
-        a
-            font-size: 1.2rem
-
-@include respond (wide)
-    .footer, ul#footer
-        margin-top: 4rem
-        li
-            margin: 0.5em 0
-            flex-basis: 50%
-            height: 2em
-            a
-                font-size: 1.2rem
-
-@include respond (square)
-    .footer, ul#footer
-        margin-top: 4rem
-        li
-            margin: 0.5em 0
-            flex-basis: 50%
-            height: 2em
-            a
-                font-size: 1.2rem
+nav
+    border-top: none !important
