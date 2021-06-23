@@ -1,8 +1,8 @@
 <?php
 /**
- * 
+ *
  * Template Name: Challenge
- * 
+ *
  * @subpackage Zivastena
  */
 
@@ -10,20 +10,20 @@ require 'modules.php';
 
 $lang = substr(get_locale(), 0, 2);
 
-if( $lang == "cs" ){
+if ($lang == "cs") {
     $home_url = "/";
-} else if( $lang == "es"){
+} elseif ($lang == "es") {
     $home_url = "/es/";
 } else {
     $home_url = "/en/";
 }
 
 global $post;
-$home = get_post_meta( $post->ID, 'home', true);
-$bases = get_post_meta( $post->ID, 'bases', true);
-$registrate = get_post_meta( $post->ID, 'registrate', true);
-$artists = get_post_meta( $post->ID, 'artist', true);
-$top_text = get_post_meta( $post->ID, 'top_text', true);
+$home = get_post_meta($post->ID, 'home', true);
+$bases = get_post_meta($post->ID, 'bases', true);
+$registrate = get_post_meta($post->ID, 'registrate', true);
+$artists = get_post_meta($post->ID, 'artist', true);
+$top_text = get_post_meta($post->ID, 'top_text', true);
 
 ?>
 <!doctype html>

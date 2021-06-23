@@ -1,1 +1,1 @@
-<?php require 'category-paintings.php' ?>
+<?php require 'category-paintings.php';
