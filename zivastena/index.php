@@ -33,7 +33,7 @@ function print_cat_by_id($id, $class)
         esc_html($category->name),
         esc_html($category->description),
         esc_html(z_taxonomy_image_url($category->term_id)),
-        esc_attr(sprintf(__('View all posts in %s', 'textdomain'), $category->name)),
+        esc_attr(sprintf(__('View all posts in %s', 'textdomain'), $category->name))
     );
 }
 
