@@ -42,7 +42,7 @@ function styles()
 
 add_action('wp_enqueue_scripts', 'styles');
 add_action('wp_enqueue_scripts', 'scripts');
-add_action('wp_enqueue_scripts', 'live_js');
+//add_action('wp_enqueue_scripts', 'live_js');
 
 
 function mobile_theme_color()
