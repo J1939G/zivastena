@@ -9,6 +9,9 @@ $cross-width: 0.2rem
 $bar-color: transparentize($mid-gray, 0.1 )
 $nav-height: header-font-size() * $nav-height-multiplier
 
+$links-max-width: 1200px
+$links-count: 5
+
 body.block-scroll
     overflow-y: hidden
 nav
@@ -283,7 +286,7 @@ nav
 
         div.links
             width: 100%
-            max-width: 1200px
+            max-width: $links-max-width
             margin: 0 auto
             height: $link-height
             transform: none
@@ -321,6 +324,7 @@ nav
                         position: absolute
                         box-sizing: border-box
                         width: calc(95% / 5)
+                        max-width: calc( 1200px * 0.95 / 5)
                         top: header-font-size(wide) * $nav-height-multiplier + $link-height
                         transition: all $menu-open-delay ease-in-out
                         max-height: 0
