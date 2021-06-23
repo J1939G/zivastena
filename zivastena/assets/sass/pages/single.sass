@@ -8,6 +8,9 @@ $timing-function: ease-in-out
 body.noscroll 
     overflow-y: hidden
 
+nav 
+    z-index: 7
+
 .wp-block-gallery 
     width: 95%
     margin: 0 auto
@@ -67,3 +70,25 @@ body.noscroll
 
     &.zoomed
         z-index: 7
+
+//@include respond(square)
+body > h1 
+    margin-top: 1.75em
+
+@include respond (wide)
+
+    body > h1 
+        margin-top: 0.5em  
+
+    nav.main, nav.main.full-height
+        top: 0
+        height: unset
+
+        .title-wrapper
+            display: none
+
+        div.links
+            padding-bottom: 0
+
+            .menu .menu-item .sub-menu
+                top: 1.75em

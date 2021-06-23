@@ -13,6 +13,7 @@ $assets = get_stylesheet_directory_uri();
     <?php wp_head(); ?>
 </head>
 <body>
+    <?php get_header() ?>
     <h1><?php the_title(); ?></h1>
     <div class="content">
         <?php
