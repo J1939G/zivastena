@@ -4,33 +4,40 @@ let img_height = 0;
 let img_pos = 0;
 let img_src = 0;
 
+function lower_zoombox() {
+    if (jQuery('.zoombox').hasClass('zoomed')) {
+        jQuery('.zoombox').css({
+            top: img.offset().top - jQuery(window).scrollTop(),
+            left: img.offset().left,
+            width: img.width(),
+            height: img.height()
+        });
+
+        jQuery('.blurbox').css({ backdropFilter: 'blur(0)', backgroundColor: 'transparent' });
+
+
+        setTimeout(function() {
+            //jQuery('body').toggleClass('noscroll');
+            img.removeClass('zoomed');
+            setTimeout(function() {
+                jQuery('.zoombox').removeClass('zoomed');
+                jQuery('.blurbox').removeClass('zoomed');
+            }, 1);
+        }, 750);
+
+    }
+}
+
 jQuery(document).ready(function() {
     jQuery('body').append('<div class="zoombox fxbox"><div>');
     jQuery('body').append('<div class="blurbox fxbox"><div>');
 
-    jQuery('div.fxbox').click(function() {
-        if (jQuery('.zoombox').hasClass('zoomed')) {
-            jQuery('.zoombox').css({
-                top: img.offset().top - jQuery(window).scrollTop(),
-                left: img.offset().left,
-                width: img.width(),
-                height: img.height()
-            });
-
-            jQuery('.blurbox').css({ backdropFilter: 'blur(0)', backgroundColor: 'transparent' });
-
-
-            setTimeout(function() {
-                //jQuery('body').toggleClass('noscroll');
-                img.removeClass('zoomed');
-                setTimeout(function() {
-                    jQuery('.zoombox').removeClass('zoomed');
-                    jQuery('.blurbox').removeClass('zoomed');
-                }, 1);
-            }, 750);
-
+    jQuery('div.fxbox').click(lower_zoombox);
+    jQuery(document).keyup(function(e) {
+        if (e.keyCode == 27) { // escape key
+            lower_zoombox();
         }
-    })
+    });
 
     jQuery('img').click(function() {
 
