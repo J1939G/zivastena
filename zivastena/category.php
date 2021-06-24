@@ -22,7 +22,7 @@
         <div class="posts-container">
             <?php
                 $randomPosts = get_posts(array(
-                    'category_name' => get_the_category()[0]->name,
+                    'category_name' => $cat_name,
                     'orderby' => 'date',
                     'numberposts' => 100,
                 ));
