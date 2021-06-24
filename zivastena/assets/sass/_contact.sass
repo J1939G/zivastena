@@ -1,0 +1,70 @@
+@import _typography
+    
+.contact-form 
+    background-color: $dark-gray
+    border-radius: $radius
+    overflow: hidden 
+    position: fixed
+    display: block 
+    font-size: base-font-size() * 0.8
+    height: auto
+    left: 2.5vw
+    max-height: 90vh
+    overflow-y: auto
+    width: calc(100% - 5vw)
+    top: calc(50% + 2em)
+    transform: translateY(-50%); 
+
+    & > div 
+        display: block
+        position: relative
+        height: 100%
+        width: 100%
+
+    form 
+        padding: 1em
+
+        p 
+            width: 80%
+            margin: 1em auto 0.25em
+            padding: 0
+            color: $light-gray
+            
+            label 
+                display: block
+                position: relative
+                width: 100%
+                
+                span 
+                    position: relative
+                    display: block
+                    width: 100%
+                    margin: 0 auto
+
+                    input, textarea
+                        box-sizing: border-box
+                        line-height: 1.5em
+                        border-radius: $radius
+                        background-color: $light-gray
+                        color: $dark-gray
+                        font-family: base
+                        border: none
+                        font-size: base-font-size() * 0.8
+                        width: 100%
+
+                    textarea
+                        height: 4em
+            
+            .wpcf7-submit              
+                font-size: base-font-size()
+                font-weight: 600
+                border-radius: $radius
+                border: 0
+                color: $light-gray
+                padding: 0.3em 1.25em
+                background-color: $link-blue
+
+        .wpcf7-response-output
+            color: $light-gray
+            border-radius: $radius
+            padding: 0.5em

@@ -38,4 +38,5 @@
                 <?php
                 } ?>
         </div>
+        <?php include 'contact.php' ?>
     <?php get_footer();?>
