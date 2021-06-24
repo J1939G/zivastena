@@ -49,7 +49,7 @@ function mobile_theme_color()
 {
     echo '<meta name="theme-color" content="#404040" />';
     echo '<meta charset="<?php bloginfo( \'charset\' ); ?>" />';
-    echo '<meta name="viewport" content="width=device-width, initial-scale=1" />';
+    echo '<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />';
 }
 
 add_action('wp_head', 'mobile_theme_color');
